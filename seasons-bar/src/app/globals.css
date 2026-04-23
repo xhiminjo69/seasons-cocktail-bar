@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-cormorant: "Cormorant Garamond", Georgia, serif;
+    --font-jost: "Jost", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #07070e;
+    color: #f5f0e8;
+    font-family: var(--font-jost);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #c9a96e;
+    color: #07070e;
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #07070e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c9a96e;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-gradient-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .clip-inset {
+    overflow: hidden;
+  }
+
+  /* Editorial image frames — portrait compositions */
+  .frame-portrait {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+
+  .frame-portrait-tall {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+  }
+
+  /* Editorial image frames — landscape compositions */
+  .frame-landscape {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  /* Cinematic wide format — for team banners and atmosphere strips */
+  .frame-cinematic {
+    position: relative;
+    aspect-ratio: 21 / 9;
+    min-height: 40vh;
+    overflow: hidden;
+  }
+
+  /* Square editorial crop */
+  .frame-square {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  /* Prevent image pop-in on load */
+  .img-fade-in {
+    transition: opacity 0.4s ease;
+  }
+
+  .img-fade-in[data-loaded="false"] {
+    opacity: 0;
+  }
+
+  .img-fade-in[data-loaded="true"] {
+    opacity: 1;
+  }
+}
