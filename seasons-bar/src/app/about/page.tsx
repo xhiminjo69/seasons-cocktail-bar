@@ -83,9 +83,9 @@ export default function AboutPage() {
       </section>
 
       {/* STORY */}
-      <section className="bg-night py-24 md:py-36">
+      <section className="bg-night py-20 md:py-36">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             <AnimatedSection direction="left">
               <h2 className="font-display text-4xl sm:text-5xl font-light text-ivory leading-tight mb-8">
                 Where the sea<br />
@@ -142,7 +142,7 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="bg-night-2 py-24 md:py-36 border-t border-white/5">
+      <section className="bg-night-2 py-16 sm:py-24 md:py-36 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="text-center mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
@@ -153,7 +153,7 @@ export default function AboutPage() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
             {values.map((value, i) => (
               <AnimatedSection
                 key={value.number}
@@ -187,9 +187,9 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-night py-24 md:py-36">
+      <section className="bg-night py-16 sm:py-24 md:py-36">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-20">
+          <AnimatedSection className="text-center mb-12 sm:mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               The People
             </p>
@@ -232,22 +232,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* LARGE TEAM PHOTO */}
-      <section className="relative overflow-hidden" style={{ aspectRatio: "21/9", minHeight: "48vh" }}>
+      {/* LARGE TEAM PHOTO
+          Mobile: explicit h-[65vh] overrides the 21/9 aspect-ratio so the section is
+          tall enough to show the team properly. Desktop: h-auto restores the cinematic crop. */}
+      <section
+        className="relative overflow-hidden h-[65vh] md:h-auto"
+        style={{ aspectRatio: "21/9" }}
+      >
         <Image
           src="/images/staff.jpg"
           alt="The Seasons Family"
           fill
-          className="object-cover object-[center_25%]"
+          /* Mobile: 40% down centres the team faces + raised hands.
+             Desktop: 25% keeps the wide cinematic composition. */
+          className="object-cover object-[center_40%] md:object-[center_25%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent" />
         <AnimatedSection
           direction="none"
-          className="absolute inset-0 flex items-end justify-center pb-16"
+          className="absolute inset-0 flex items-end justify-center pb-14 sm:pb-16"
         >
-          <div className="text-center">
-            <p className="font-display text-3xl sm:text-4xl font-light italic text-ivory/90">
+          <div className="text-center px-6">
+            <p className="font-display text-2xl sm:text-3xl md:text-4xl font-light italic text-ivory/90 text-balance">
               One team. One craft. One experience.
             </p>
           </div>

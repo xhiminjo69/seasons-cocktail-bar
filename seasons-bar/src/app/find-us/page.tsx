@@ -53,7 +53,7 @@ export default function FindUsPage() {
                 <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-5">
                   Address
                 </p>
-                <address className="not-italic font-display text-3xl sm:text-4xl font-light text-ivory leading-snug">
+                <address className="not-italic font-display text-2xl sm:text-3xl md:text-4xl font-light text-ivory leading-snug">
                   Lungomare<br />
                   Vlorë, Albania
                 </address>
@@ -121,7 +121,7 @@ export default function FindUsPage() {
           {/* Map */}
           <AnimatedSection
             direction="right"
-            className="relative min-h-[400px] lg:min-h-full order-1 lg:order-2"
+            className="relative min-h-[50vh] lg:min-h-full order-1 lg:order-2"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1518.2521360843964!2d19.49561609325407!3d40.44197461194943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1345334c8bb7048f%3A0x777d45673c56ac17!2sSeasons%20Cocktail%20Bar!5e0!3m2!1sen!2s!4v1776955207823!5m2!1sen!2s"
@@ -156,7 +156,7 @@ export default function FindUsPage() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-6">
             {[
               {
                 icon: "◉",
@@ -185,7 +185,10 @@ export default function FindUsPage() {
       </section>
 
       {/* AMBIENCE STRIP */}
-      <section className="relative overflow-hidden" style={{ aspectRatio: "21/9", minHeight: "44vh" }}>
+      <section
+        className="relative overflow-hidden h-[52vh] md:h-auto"
+        style={{ aspectRatio: "21/9" }}
+      >
         <Image
           src="/images/ambienti.jpg"
           alt="Seasons — Come visit us"

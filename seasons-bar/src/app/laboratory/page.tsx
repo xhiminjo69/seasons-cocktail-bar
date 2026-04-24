@@ -134,7 +134,7 @@ export default function LaboratoryPage() {
       </section>
 
       {/* MANIFESTO */}
-      <section className="bg-night py-24 md:py-36 border-b border-white/5">
+      <section className="bg-night py-16 sm:py-24 md:py-36 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1.2}>
             <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/85 leading-relaxed text-balance">
@@ -226,9 +226,9 @@ export default function LaboratoryPage() {
       </section>
 
       {/* TECHNIQUES */}
-      <section className="bg-night py-24 md:py-36">
+      <section className="bg-night py-16 sm:py-24 md:py-36">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="mb-16">
+          <AnimatedSection className="mb-12 sm:mb-16">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               Our Methods
             </p>
@@ -258,7 +258,7 @@ export default function LaboratoryPage() {
       </section>
 
       {/* LAB COCKTAILS */}
-      <section className="bg-night-2 py-24 md:py-36 border-t border-white/5">
+      <section className="bg-night-2 py-16 sm:py-24 md:py-36 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="text-center mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
@@ -281,7 +281,7 @@ export default function LaboratoryPage() {
                 className="group bg-night-2"
               >
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-0">
-                  <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[300px] overflow-hidden">
+                  <div className="relative aspect-[4/5] sm:aspect-[4/3] md:aspect-auto md:min-h-[300px] overflow-hidden">
                     <Image
                       src={cocktail.image}
                       alt={cocktail.name}
@@ -333,12 +333,15 @@ export default function LaboratoryPage() {
       </section>
 
       {/* CLOSING */}
-      <section className="relative overflow-hidden flex items-center justify-center" style={{ aspectRatio: "21/9", minHeight: "48vh" }}>
+      <section
+        className="relative overflow-hidden flex items-center justify-center h-[58vh] md:h-auto"
+        style={{ aspectRatio: "21/9" }}
+      >
         <Image
           src="/images/CoolDoc.jpeg"
           alt="Laboratory spirit"
           fill
-          className="object-cover object-[center_15%]"
+          className="object-cover object-[center_25%] md:object-[center_15%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-night/80" />

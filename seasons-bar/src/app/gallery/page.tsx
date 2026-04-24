@@ -79,10 +79,10 @@ export default function GalleryPage() {
       </section>
 
       {/* INTRO */}
-      <section className="bg-night py-16 border-b border-white/5">
+      <section className="bg-night py-12 sm:py-16 border-b border-white/5">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection direction="none">
-            <p className="font-display text-xl sm:text-2xl font-light italic text-ivory/70 leading-relaxed">
+            <p className="font-display text-lg sm:text-xl md:text-2xl font-light italic text-ivory/70 leading-relaxed text-balance">
               &ldquo;Every image is a fragment of the Seasons experience —
               the light, the craft, the people, the night.&rdquo;
             </p>
@@ -91,7 +91,7 @@ export default function GalleryPage() {
       </section>
 
       {/* MASONRY GRID */}
-      <section className="bg-night py-12 md:py-20">
+      <section className="bg-night py-8 sm:py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="columns-2 md:columns-3 lg:columns-4 gap-2 md:gap-3">
             {images.map((img, i) => (

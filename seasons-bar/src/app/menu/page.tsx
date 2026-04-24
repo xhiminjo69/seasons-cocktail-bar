@@ -190,7 +190,7 @@ export default function MenuPage() {
       {/* HERO */}
       <section className="bg-night border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-20 py-16 lg:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-20 py-12 lg:py-0">
 
             {/* Text */}
             <div className="order-2 lg:order-1 lg:py-28">
@@ -211,7 +211,7 @@ export default function MenuPage() {
 
             {/* Full poster — natural proportions, fully visible, no cropping */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <AnimatedSection direction="up" delay={0.15} className="w-full max-w-[260px] sm:max-w-[340px] lg:max-w-[460px] xl:max-w-[520px]">
+              <AnimatedSection direction="up" delay={0.15} className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[460px] xl:max-w-[520px]">
                 <Image
                   src="/images/fotoo.jpeg"
                   alt="Paloma Cocktail"

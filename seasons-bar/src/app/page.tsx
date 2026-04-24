@@ -131,7 +131,7 @@ export default function HomePage() {
       </section>
 
       {/* MANIFESTO */}
-      <section className="bg-night py-28 md:py-40">
+      <section className="bg-night py-20 sm:py-28 md:py-40">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1.2}>
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-10">
@@ -148,7 +148,7 @@ export default function HomePage() {
       </section>
 
       {/* FEATURED COCKTAILS */}
-      <section className="bg-night-2 py-24 md:py-36">
+      <section className="bg-night-2 py-16 sm:py-24 md:py-36">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="text-center mb-16">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
@@ -177,11 +177,11 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-night-2 via-night-2/10 to-transparent" />
                 </div>
-                <div className="p-8">
+                <div className="p-6 sm:p-8">
                   <p className="font-sans text-[10px] tracking-widest2 uppercase text-gold mb-2">
                     {cocktail.type}
                   </p>
-                  <h3 className="font-display text-3xl font-light text-ivory mb-3">
+                  <h3 className="font-display text-2xl sm:text-3xl font-light text-ivory mb-3">
                     {cocktail.name}
                   </h3>
                   <p className="font-sans text-sm text-muted leading-relaxed">
@@ -208,7 +208,7 @@ export default function HomePage() {
       <section className="bg-night grid grid-cols-1 md:grid-cols-2 min-h-[70vh]">
         <AnimatedSection
           direction="left"
-          className="relative min-h-[50vh] md:min-h-full overflow-hidden"
+          className="relative min-h-[65vh] md:min-h-full overflow-hidden"
         >
           <Image
             src="/images/ambienti.jpg"
@@ -226,12 +226,10 @@ export default function HomePage() {
           <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-6">
             The Space
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl font-light text-ivory leading-tight mb-6">
-            An open-air<br />
-            <em>sanctuary</em><br />
-            by the sea
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-ivory leading-[1.15] mb-6">
+            An open-air <em>sanctuary</em> by the sea
           </h2>
-          <p className="font-sans text-sm text-muted leading-loose max-w-sm mb-10">
+          <p className="font-sans text-sm text-muted leading-loose max-w-sm mb-8 sm:mb-10">
             Our terrace opens directly onto the Lungomare promenade, where the
             Adriatic breeze carries the scent of sea salt and citrus. The space
             breathes — warm lights, lush greenery, the distant sound of waves.
@@ -342,13 +340,14 @@ export default function HomePage() {
           {/* Full-bleed team image */}
           <AnimatedSection
             direction="left"
-            className="relative aspect-[4/3] md:aspect-auto overflow-hidden order-1 md:order-2"
+            className="relative h-[65vh] md:h-auto md:aspect-auto overflow-hidden order-1 md:order-2"
           >
             <Image
               src="/images/staff.jpg"
               alt="The Seasons Team"
               fill
-              className="object-cover object-[center_22%] transition-transform duration-1000 ease-luxury hover:scale-105"
+              /* Mobile: 32% centres faces in tall crop; desktop: 22% for wide cinematic frame */
+              className="object-cover object-[center_32%] md:object-[center_22%] transition-transform duration-1000 ease-luxury hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             {/* Left-side blend into text column */}
