@@ -156,9 +156,33 @@ export default function MenuPage() {
     return () => document.removeEventListener("keydown", onKey);
   }, [selected, closeModal]);
 
+  /* iOS-safe scroll lock — overflow:hidden alone doesn't work on iOS Safari */
   useEffect(() => {
-    document.body.style.overflow = selected ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (selected) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.overflow = "hidden";
+    } else {
+      const top = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+      if (top) {
+        window.scrollTo(0, -parseInt(top, 10));
+      }
+    }
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+    };
   }, [selected]);
 
   return (
@@ -166,7 +190,7 @@ export default function MenuPage() {
       {/* HERO */}
       <section className="bg-night border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20 py-20 lg:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-20 py-16 lg:py-0">
 
             {/* Text */}
             <div className="order-2 lg:order-1 lg:py-28">
@@ -174,11 +198,11 @@ export default function MenuPage() {
                 <p className="font-sans text-[10px] tracking-widest3 text-gold uppercase mb-6">
                   The Drinks
                 </p>
-                <h1 className="font-display text-7xl sm:text-8xl lg:text-[7rem] xl:text-[8.5rem] font-light text-ivory leading-[0.88] mb-10">
+                <h1 className="font-display text-[clamp(3.5rem,12vw,8.5rem)] font-light text-ivory leading-[0.88] mb-10">
                   Our<br />Menu
                 </h1>
                 <div className="w-12 h-px bg-gold/30 mb-8" />
-                <p className="font-display text-xl font-light italic text-ivory/55 max-w-sm leading-loose">
+                <p className="font-display text-lg sm:text-xl font-light italic text-ivory/55 max-w-sm leading-loose">
                   &ldquo;Every cocktail on our menu has been designed around a
                   feeling — a moment, a season, a memory. We hope you find yours.&rdquo;
                 </p>
@@ -187,7 +211,7 @@ export default function MenuPage() {
 
             {/* Full poster — natural proportions, fully visible, no cropping */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <AnimatedSection direction="up" delay={0.15} className="w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[460px] xl:max-w-[520px]">
+              <AnimatedSection direction="up" delay={0.15} className="w-full max-w-[260px] sm:max-w-[340px] lg:max-w-[460px] xl:max-w-[520px]">
                 <Image
                   src="/images/fotoo.jpeg"
                   alt="Paloma Cocktail"
@@ -203,14 +227,14 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* FILTER */}
-      <section className="bg-night sticky top-[60px] z-30 border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center gap-8 overflow-x-auto scrollbar-none">
+      {/* FILTER — sticky below the 64px navbar (py-4 + 32px logo) */}
+      <section className="bg-night sticky top-16 z-30 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center gap-5 sm:gap-8 overflow-x-auto scrollbar-none">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`font-sans text-xs tracking-widest2 uppercase whitespace-nowrap transition-all duration-300 pb-1 border-b ${
+              className={`font-sans text-xs tracking-widest2 uppercase whitespace-nowrap transition-all duration-300 pb-1 border-b min-h-[44px] flex items-end ${
                 active === cat
                   ? "text-gold border-gold"
                   : "text-ivory/40 border-transparent hover:text-ivory/70"
@@ -229,13 +253,13 @@ export default function MenuPage() {
             <AnimatedSection key={cocktail.name} delay={(i % 6) * 0.05}>
               <button
                 onClick={() => setSelected(cocktail)}
-                className="group w-full text-left border-b border-white/8 py-6 flex items-center justify-between gap-6 transition-colors duration-200 hover:border-gold/30"
+                className="group w-full text-left border-b border-white/8 py-5 sm:py-6 flex items-center justify-between gap-4 sm:gap-6 transition-colors duration-200 hover:border-gold/30 min-h-[64px]"
               >
-                <div className="flex items-baseline gap-5 min-w-0">
-                  <span className="font-sans text-[10px] tracking-widest2 uppercase text-gold/60 shrink-0 w-20 hidden sm:block">
+                <div className="flex items-baseline gap-4 sm:gap-5 min-w-0">
+                  <span className="font-sans text-[10px] tracking-widest2 uppercase text-gold/60 shrink-0 w-16 sm:w-20 hidden sm:block">
                     {cocktail.spirit.replace(" Based", "")}
                   </span>
-                  <span className="font-display text-2xl sm:text-3xl font-light text-ivory group-hover:text-gold transition-colors duration-200 truncate">
+                  <span className="font-display text-2xl sm:text-3xl font-light text-ivory group-hover:text-gold transition-colors duration-200">
                     {cocktail.name}
                   </span>
                 </div>
@@ -268,13 +292,13 @@ export default function MenuPage() {
           {/* Backdrop */}
           <div className="absolute inset-0 bg-night/90 backdrop-blur-md" />
 
-          {/* Panel */}
+          {/* Panel — overflow-y-auto so the whole modal scrolls on small screens */}
           <div
-            className="relative z-10 w-full max-w-3xl bg-night border border-white/10 grid grid-cols-1 sm:grid-cols-2 overflow-hidden max-h-[90vh]"
+            className="relative z-10 w-full max-w-3xl bg-night border border-white/10 grid grid-cols-1 sm:grid-cols-2 overflow-y-auto max-h-[92vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Image */}
-            <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[480px]">
+            {/* Image — capped height on mobile so details are always visible */}
+            <div className="relative aspect-[4/3] sm:aspect-auto sm:min-h-[480px] flex-shrink-0">
               <Image
                 src={selected.image}
                 alt={selected.name}
@@ -286,21 +310,21 @@ export default function MenuPage() {
             </div>
 
             {/* Details */}
-            <div className="flex flex-col justify-center px-8 py-10 overflow-y-auto">
+            <div className="flex flex-col justify-center px-6 sm:px-8 py-8 sm:py-10">
               <p className="font-sans text-[10px] tracking-widest3 text-gold uppercase mb-4">
                 {selected.spirit}
               </p>
-              <h2 className="font-display text-4xl sm:text-5xl font-light text-ivory leading-tight mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-ivory leading-tight mb-5">
                 {selected.name}
               </h2>
-              <p className="font-sans text-sm text-ivory/60 leading-relaxed mb-8">
+              <p className="font-sans text-sm text-ivory/60 leading-relaxed mb-6 sm:mb-8">
                 {selected.description}
               </p>
-              <div className="border-t border-white/8 pt-6">
+              <div className="border-t border-white/8 pt-5 sm:pt-6">
                 <p className="font-sans text-[10px] tracking-widest2 uppercase text-gold/50 mb-3">
                   Ingredients
                 </p>
-                <ul className="space-y-1">
+                <ul className="space-y-1.5">
                   {selected.ingredients.map((ing) => (
                     <li key={ing} className="font-sans text-xs text-ivory/40">
                       {ing}
@@ -313,12 +337,14 @@ export default function MenuPage() {
               </span>
             </div>
 
-            {/* Close */}
+            {/* Close — proper 44px tap target */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 font-sans text-xs text-ivory/40 hover:text-ivory transition-colors duration-200 bg-night/60 backdrop-blur-sm px-3 py-1.5"
+              aria-label="Close"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 font-sans text-xs text-ivory/40 hover:text-ivory transition-colors duration-200 bg-night/60 backdrop-blur-sm min-w-[44px] min-h-[44px] flex items-center justify-center gap-1"
             >
-              Close ✕
+              <span className="hidden sm:inline">Close</span>
+              <span>✕</span>
             </button>
           </div>
         </div>

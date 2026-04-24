@@ -53,7 +53,7 @@ export default function HomePage() {
         className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
       >
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 will-change-transform"
           style={{ y: heroY }}
         >
           <Image
@@ -75,10 +75,10 @@ export default function HomePage() {
           style={{ opacity: heroOpacity }}
         >
           <motion.p
-            initial={{ opacity: 0, letterSpacing: "0.5em" }}
-            animate={{ opacity: 1, letterSpacing: "0.4em" }}
+            initial={{ opacity: 0, letterSpacing: "0.3em" }}
+            animate={{ opacity: 1, letterSpacing: "0.2em" }}
             transition={{ duration: 1.2, ease: [0.25, 0.1, 0, 1] }}
-            className="font-sans text-xs text-gold uppercase tracking-widest3 mb-8"
+            className="font-sans text-[10px] sm:text-xs text-gold uppercase tracking-widest2 sm:tracking-widest3 mb-8"
           >
             Cocktail Bar · Lungomare, Vlorë
           </motion.p>
@@ -92,7 +92,8 @@ export default function HomePage() {
                 delay: 0.2,
                 ease: [0.25, 0.1, 0, 1],
               }}
-              className="font-display text-[clamp(5rem,15vw,14rem)] font-light text-ivory leading-none tracking-widest2 uppercase"
+              className="font-display font-light text-ivory leading-none uppercase tracking-wider sm:tracking-widest2"
+              style={{ fontSize: "clamp(3rem, 13vw, 14rem)" }}
             >
               Seasons
             </motion.h1>
@@ -106,7 +107,7 @@ export default function HomePage() {
               delay: 0.7,
               ease: [0.25, 0.1, 0, 1],
             }}
-            className="font-display text-xl sm:text-2xl font-light italic text-champagne/80"
+            className="font-display text-lg sm:text-xl md:text-2xl font-light italic text-champagne/80"
           >
             Where every sip tells a story
           </motion.p>
@@ -136,7 +137,7 @@ export default function HomePage() {
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-10">
               Our Philosophy
             </p>
-            <blockquote className="font-display text-3xl sm:text-4xl md:text-5xl font-light italic text-ivory/90 leading-relaxed">
+            <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/90 leading-relaxed text-balance">
               &ldquo;Born from the sea breeze and the warmth of Mediterranean
               nights — Seasons is more than a bar. It is an experience crafted
               for those who believe a great cocktail is a work of art.&rdquo;
@@ -220,7 +221,7 @@ export default function HomePage() {
         </AnimatedSection>
         <AnimatedSection
           direction="right"
-          className="flex flex-col justify-center px-10 md:px-16 py-20 bg-night-2"
+          className="flex flex-col justify-center px-6 sm:px-10 md:px-16 py-16 sm:py-20 bg-night-2"
         >
           <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-6">
             The Space
@@ -315,7 +316,7 @@ export default function HomePage() {
           {/* Text column */}
           <AnimatedSection
             direction="right"
-            className="flex flex-col justify-center px-8 md:px-12 lg:px-20 py-20 md:py-0 order-2 md:order-1"
+            className="flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-20 py-16 sm:py-20 md:py-0 order-2 md:order-1"
           >
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-6">
               The Team

@@ -12,6 +12,11 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent horizontal overflow at root level */
+    overflow-x: hidden;
+    /* Prevent iOS font-size inflation on orientation change */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -19,6 +24,23 @@
     color: #f5f0e8;
     font-family: var(--font-jost);
     overflow-x: hidden;
+    /* Remove iOS tap flash on interactive elements */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Ensure full-screen hero sections use dynamic viewport height
+     so they don't jump when mobile browser bars appear/disappear */
+  .h-screen {
+    height: 100vh; /* fallback */
+    height: 100dvh; /* modern mobile-aware value */
+  }
+
+  /* Proper tap targets for all interactive elements */
+  a,
+  button,
+  [role="button"],
+  label {
+    touch-action: manipulation;
   }
 
   ::selection {
@@ -54,6 +76,15 @@
     overflow: hidden;
   }
 
+  /* Hide scrollbar cross-browser (used on filter tabs) */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Editorial image frames — portrait compositions */
   .frame-portrait {
     position: relative;
@@ -78,7 +109,8 @@
   .frame-cinematic {
     position: relative;
     aspect-ratio: 21 / 9;
-    min-height: 40vh;
+    /* Taller minimum on mobile so the image doesn't squish to a sliver */
+    min-height: 44vh;
     overflow: hidden;
   }
 
@@ -100,5 +132,18 @@
 
   .img-fade-in[data-loaded="true"] {
     opacity: 1;
+  }
+}
+
+/* Respect user's reduced-motion preference — keeps site accessible
+   without removing animations entirely for those who want them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

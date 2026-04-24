@@ -75,7 +75,7 @@ export default function AboutPage() {
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               About Us
             </p>
-            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
               Our Story
             </h1>
           </AnimatedSection>
@@ -125,7 +125,8 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-night/10" />
               </div>
-              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-night-2 border border-white/5 flex items-center justify-center">
+              {/* On mobile: positioned inside the image; on md+: decorative bleed outside */}
+              <div className="absolute bottom-4 left-4 md:-bottom-6 md:-left-6 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-night-2 border border-white/5 flex items-center justify-center">
                 <div className="text-center">
                   <span className="font-display text-5xl text-gold font-light">
                     &apos;21
@@ -232,7 +233,7 @@ export default function AboutPage() {
       </section>
 
       {/* LARGE TEAM PHOTO */}
-      <section className="relative overflow-hidden" style={{ aspectRatio: "21/9", minHeight: "40vh" }}>
+      <section className="relative overflow-hidden" style={{ aspectRatio: "21/9", minHeight: "48vh" }}>
         <Image
           src="/images/staff.jpg"
           alt="The Seasons Family"

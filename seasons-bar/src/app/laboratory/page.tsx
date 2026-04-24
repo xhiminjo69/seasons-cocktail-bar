@@ -111,7 +111,8 @@ export default function LaboratoryPage() {
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-6">
               Craft · Science · Art
             </p>
-            <h1 className="font-display text-7xl sm:text-8xl md:text-[10rem] font-light text-ivory leading-none mb-6">
+            <h1 className="font-display font-light text-ivory leading-none mb-6"
+              style={{ fontSize: "clamp(3.5rem, 13vw, 10rem)" }}>
               The<br />
               <em className="text-gold">Lab</em>
             </h1>
@@ -136,7 +137,7 @@ export default function LaboratoryPage() {
       <section className="bg-night py-24 md:py-36 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1.2}>
-            <blockquote className="font-display text-3xl sm:text-4xl md:text-5xl font-light italic text-ivory/85 leading-relaxed">
+            <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/85 leading-relaxed text-balance">
               &ldquo;A recipe is only the beginning. The laboratory is where we
               find out what a cocktail truly wants to become.&rdquo;
             </blockquote>
@@ -241,7 +242,7 @@ export default function LaboratoryPage() {
               <AnimatedSection
                 key={tech.title}
                 delay={i * 0.1}
-                className="bg-night p-10 md:p-14 group"
+                className="bg-night p-7 sm:p-10 md:p-14 group"
               >
                 <div className="w-8 h-px bg-gold/30 mb-8 group-hover:w-16 transition-all duration-500 ease-luxury" />
                 <h3 className="font-display text-3xl font-light text-ivory mb-4">
@@ -291,16 +292,16 @@ export default function LaboratoryPage() {
                     <div className="absolute inset-0 bg-night/20" />
                   </div>
 
-                  <div className="p-8 md:p-12 flex flex-col justify-center">
+                  <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
                     <div className="flex items-center gap-4 mb-3">
-                      <span className="font-display text-6xl font-light text-gold/15 leading-none">
+                      <span className="font-display text-5xl sm:text-6xl font-light text-gold/15 leading-none">
                         {cocktail.number}
                       </span>
                     </div>
                     <p className="font-sans text-[10px] tracking-widest2 uppercase text-gold mb-2">
                       {cocktail.method}
                     </p>
-                    <h3 className="font-display text-4xl font-light text-ivory mb-4">
+                    <h3 className="font-display text-3xl sm:text-4xl font-light text-ivory mb-4">
                       {cocktail.name}
                     </h3>
                     <p className="font-sans text-sm text-muted leading-loose max-w-lg">
@@ -308,7 +309,7 @@ export default function LaboratoryPage() {
                     </p>
                   </div>
 
-                  <div className="p-8 md:p-12 flex flex-col justify-center border-t md:border-t-0 md:border-l border-white/5">
+                  <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center border-t md:border-t-0 md:border-l border-white/5">
                     <p className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/30 mb-4">
                       Components
                     </p>
@@ -332,7 +333,7 @@ export default function LaboratoryPage() {
       </section>
 
       {/* CLOSING */}
-      <section className="relative overflow-hidden flex items-center justify-center" style={{ aspectRatio: "21/9", minHeight: "40vh" }}>
+      <section className="relative overflow-hidden flex items-center justify-center" style={{ aspectRatio: "21/9", minHeight: "48vh" }}>
         <Image
           src="/images/CoolDoc.jpeg"
           alt="Laboratory spirit"
@@ -342,7 +343,7 @@ export default function LaboratoryPage() {
         />
         <div className="absolute inset-0 bg-night/80" />
         <AnimatedSection direction="none" className="relative z-10 text-center px-6">
-          <p className="font-display text-3xl sm:text-4xl md:text-5xl font-light italic text-ivory/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/80 max-w-2xl mx-auto leading-relaxed text-balance">
             &ldquo;Curiosity is our most important ingredient.&rdquo;
           </p>
         </AnimatedSection>

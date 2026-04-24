@@ -12,8 +12,8 @@ const navItems = [
 export default function Footer() {
   return (
     <footer className="bg-night border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-14 sm:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 relative overflow-hidden rounded-full">
@@ -55,17 +55,17 @@ export default function Footer() {
                 Opening Hours
               </h4>
               <div className="space-y-2 font-sans text-sm text-ivory/60">
-                <div className="flex justify-between gap-8">
+                <div className="flex justify-between gap-3">
                   <span>Mon — Thu</span>
-                  <span className="text-ivory/40">17:00 — 01:00</span>
+                  <span className="text-ivory/40 tabular-nums">17:00 — 01:00</span>
                 </div>
-                <div className="flex justify-between gap-8">
+                <div className="flex justify-between gap-3">
                   <span>Fri — Sat</span>
-                  <span className="text-ivory/40">17:00 — 03:00</span>
+                  <span className="text-ivory/40 tabular-nums">17:00 — 03:00</span>
                 </div>
-                <div className="flex justify-between gap-8">
+                <div className="flex justify-between gap-3">
                   <span>Sunday</span>
-                  <span className="text-ivory/40">17:00 — 01:00</span>
+                  <span className="text-ivory/40 tabular-nums">17:00 — 01:00</span>
                 </div>
               </div>
             </div>

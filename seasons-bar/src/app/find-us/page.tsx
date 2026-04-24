@@ -35,7 +35,7 @@ export default function FindUsPage() {
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               Location
             </p>
-            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
               Find Us
             </h1>
           </AnimatedSection>
@@ -46,7 +46,7 @@ export default function FindUsPage() {
       <section className="bg-night py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
           {/* Info Panel */}
-          <div className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-20 bg-night-2 order-2 lg:order-1">
+          <div className="flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 py-16 sm:py-20 bg-night-2 order-2 lg:order-1">
             <AnimatedSection direction="left">
               {/* Address */}
               <div className="mb-14">
@@ -80,10 +80,10 @@ export default function FindUsPage() {
                   {hours.map((h) => (
                     <div
                       key={h.days}
-                      className="flex justify-between items-baseline gap-6 border-b border-white/5 pb-3"
+                      className="flex justify-between items-baseline gap-3 sm:gap-6 border-b border-white/5 pb-3"
                     >
                       <span className="font-sans text-sm text-ivory/70">{h.days}</span>
-                      <span className="font-display text-lg font-light text-ivory/90 shrink-0">
+                      <span className="font-display text-base sm:text-lg font-light text-ivory/90 shrink-0 tabular-nums">
                         {h.time}
                       </span>
                     </div>
@@ -185,7 +185,7 @@ export default function FindUsPage() {
       </section>
 
       {/* AMBIENCE STRIP */}
-      <section className="relative overflow-hidden" style={{ aspectRatio: "21/9", minHeight: "35vh" }}>
+      <section className="relative overflow-hidden" style={{ aspectRatio: "21/9", minHeight: "44vh" }}>
         <Image
           src="/images/ambienti.jpg"
           alt="Seasons — Come visit us"
@@ -201,7 +201,7 @@ export default function FindUsPage() {
           <p className="font-sans text-xs tracking-widest3 uppercase text-gold">
             Open every evening
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-light italic text-ivory">
+          <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-light italic text-ivory text-balance">
             We&rsquo;ll see you tonight
           </h2>
         </AnimatedSection>

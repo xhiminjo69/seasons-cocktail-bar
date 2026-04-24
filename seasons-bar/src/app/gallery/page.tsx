@@ -71,7 +71,7 @@ export default function GalleryPage() {
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               Moments
             </p>
-            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
               Gallery
             </h1>
           </AnimatedSection>
@@ -158,19 +158,20 @@ export default function GalleryPage() {
               className="relative max-w-4xl w-full max-h-[85vh]"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative w-full h-[80vh]">
+              <div className="relative w-full h-[75vh]">
                 <Image
                   src={lightbox.src}
                   alt={lightbox.alt}
                   fill
                   className="object-contain"
-                  sizes="90vw"
+                  sizes="(max-width: 768px) 95vw, 80vw"
                 />
               </div>
             </motion.div>
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-6 right-6 font-sans text-xs tracking-widest2 uppercase text-ivory/60 hover:text-ivory transition-colors duration-300 flex items-center gap-2"
+              aria-label="Close lightbox"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 font-sans text-xs tracking-widest2 uppercase text-ivory/60 hover:text-ivory transition-colors duration-300 flex items-center gap-2 min-w-[44px] min-h-[44px] justify-end"
             >
               Close
               <span className="w-6 h-px bg-current" />

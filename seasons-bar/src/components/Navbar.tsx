@@ -29,9 +29,31 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
+  /* iOS-safe scroll lock — overflow:hidden alone doesn't stop iOS Safari scroll */
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (menuOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.overflow = "hidden";
+    } else {
+      const top = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+      if (top) {
+        window.scrollTo(0, -parseInt(top, 10));
+      }
+    }
     return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
@@ -83,9 +105,11 @@ export default function Navbar() {
             ))}
           </div>
 
+          {/* Hamburger — min 44×44px tap target per WCAG/Apple HIG */}
           <button
             aria-label="Toggle menu"
-            className="md:hidden relative z-60 flex flex-col gap-[5px] p-2"
+            aria-expanded={menuOpen}
+            className="md:hidden relative z-[60] flex flex-col gap-[5px] min-w-[44px] min-h-[44px] items-center justify-center"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <span
@@ -124,7 +148,7 @@ export default function Navbar() {
                 backgroundPosition: "center",
               }}
             />
-            <nav className="relative flex flex-col items-center gap-8">
+            <nav className="relative flex flex-col items-center gap-6 sm:gap-8 px-6">
               {navItems.map((item, i) => (
                 <motion.div
                   key={item.href}
@@ -139,7 +163,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className={`font-display text-5xl sm:text-6xl font-light italic tracking-wide transition-colors duration-300 ${
+                    className={`font-display text-[2.6rem] sm:text-5xl md:text-6xl font-light italic tracking-wide transition-colors duration-300 block text-center ${
                       pathname === item.href
                         ? "text-gold"
                         : "text-ivory hover:text-gold"
@@ -154,7 +178,8 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
               transition={{ delay: 0.5 }}
-              className="absolute bottom-12 font-sans text-xs tracking-widest2 text-ivory uppercase"
+              className="absolute bottom-10 font-sans text-xs tracking-widest2 text-ivory uppercase"
+              style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
             >
               Lungomare · Vlorë · Albania
             </motion.p>
