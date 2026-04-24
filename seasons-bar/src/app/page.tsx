@@ -131,10 +131,11 @@ export default function HomePage() {
       </section>
 
       {/* MANIFESTO */}
-      <section className="bg-night py-20 sm:py-28 md:py-40">
+      <section className="bg-night border-t border-white/5 py-24 sm:py-40 md:py-56">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1.2}>
-            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-10">
+            <div className="w-8 h-px bg-gold/30 mx-auto mb-10" />
+            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-12">
               Our Philosophy
             </p>
             <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/90 leading-relaxed text-balance">
@@ -142,16 +143,17 @@ export default function HomePage() {
               nights — Seasons is more than a bar. It is an experience crafted
               for those who believe a great cocktail is a work of art.&rdquo;
             </blockquote>
-            <div className="w-16 h-px bg-gold/40 mx-auto mt-12" />
+            <div className="w-16 h-px bg-gold/40 mx-auto mt-14" />
           </AnimatedSection>
         </div>
       </section>
 
       {/* FEATURED COCKTAILS */}
-      <section className="bg-night-2 py-16 sm:py-24 md:py-36">
+      <section className="bg-night-2 border-t border-white/5 py-20 sm:py-32 md:py-44">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-16">
-            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
+          <AnimatedSection className="text-center mb-20 sm:mb-28">
+            <div className="w-8 h-px bg-gold/20 mx-auto mb-10" />
+            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-5">
               Crafted for You
             </p>
             <h2 className="font-display text-5xl sm:text-6xl font-light text-ivory tracking-wide">
@@ -192,7 +194,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <AnimatedSection className="text-center mt-16" delay={0.3}>
+          <AnimatedSection className="text-center mt-20 sm:mt-28" delay={0.3}>
             <Link
               href="/menu"
               className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase text-ivory/70 hover:text-gold transition-colors duration-300 group"
@@ -205,7 +207,7 @@ export default function HomePage() {
       </section>
 
       {/* AMBIENCE SPLIT */}
-      <section className="bg-night grid grid-cols-1 md:grid-cols-2 min-h-[70vh]">
+      <section className="bg-night border-t border-white/5 grid grid-cols-1 md:grid-cols-2 min-h-[70vh]">
         <AnimatedSection
           direction="left"
           className="relative min-h-[65vh] md:min-h-full overflow-hidden"
@@ -221,7 +223,7 @@ export default function HomePage() {
         </AnimatedSection>
         <AnimatedSection
           direction="right"
-          className="flex flex-col justify-center px-6 sm:px-10 md:px-16 py-16 sm:py-20 bg-night-2"
+          className="flex flex-col justify-center px-6 sm:px-10 md:px-16 py-20 sm:py-28 md:py-24 bg-night-2"
         >
           <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-6">
             The Space
@@ -262,10 +264,10 @@ export default function HomePage() {
                 "radial-gradient(ellipse 85% 75% at 45% 58%, rgba(7,7,14,0.18) 0%, rgba(7,7,14,0.62) 100%)",
             }}
           />
-          {/* Top fade — height-constrained to navbar area only */}
-          <div className="absolute inset-x-0 top-0 h-[38%] bg-gradient-to-b from-night/60 to-transparent" />
+          {/* Top fade — full coverage on mobile to blend from previous section, navbar-only on desktop */}
+          <div className="absolute inset-x-0 top-0 h-[50%] md:h-[38%] bg-gradient-to-b from-night via-night/40 to-transparent md:from-night/60 md:via-transparent" />
           {/* Bottom fade — section transition */}
-          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-night to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-night to-transparent" />
         </div>
 
         <AnimatedSection
@@ -308,13 +310,13 @@ export default function HomePage() {
       </section>
 
       {/* TEAM TEASER */}
-      <section className="bg-night overflow-hidden">
+      <section className="bg-night overflow-hidden pt-14 sm:pt-20 md:pt-0">
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[80vh]">
 
           {/* Text column */}
           <AnimatedSection
             direction="right"
-            className="flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-20 py-16 sm:py-20 md:py-0 order-2 md:order-1"
+            className="flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-20 py-20 sm:py-28 md:py-0 order-2 md:order-1"
           >
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-6">
               The Team
@@ -352,6 +354,8 @@ export default function HomePage() {
             />
             {/* Left-side blend into text column */}
             <div className="absolute inset-0 bg-gradient-to-r from-night/30 via-transparent to-transparent" />
+            {/* Mobile: top fade — image emerges from the dark chapter break above */}
+            <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-night to-transparent md:hidden" />
             {/* Mobile bottom fade */}
             <div className="absolute inset-0 bg-gradient-to-t from-night/70 to-transparent md:hidden" />
           </AnimatedSection>
@@ -360,7 +364,7 @@ export default function HomePage() {
       </section>
 
       {/* BOTTOM CTA STRIP */}
-      <section className="bg-night-2 border-t border-white/5 py-20">
+      <section className="bg-night-2 border-t border-white/10 py-28 sm:py-44">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1}>
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">

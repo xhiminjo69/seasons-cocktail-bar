@@ -68,7 +68,7 @@ export default function AboutPage() {
             className="object-cover object-[center_45%]"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/50 to-night/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-night/20" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
           <AnimatedSection direction="up">
@@ -83,7 +83,7 @@ export default function AboutPage() {
       </section>
 
       {/* STORY */}
-      <section className="bg-night py-20 md:py-36">
+      <section className="bg-night py-24 sm:py-36 md:py-48">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             <AnimatedSection direction="left">
@@ -142,9 +142,9 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="bg-night-2 py-16 sm:py-24 md:py-36 border-t border-white/5">
+      <section className="bg-night-2 py-20 sm:py-32 md:py-48 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-20">
+          <AnimatedSection className="text-center mb-24 sm:mb-32">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               What We Stand For
             </p>
@@ -187,9 +187,9 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-night py-16 sm:py-24 md:py-36">
+      <section className="bg-night py-20 sm:py-32 md:py-48 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-12 sm:mb-20">
+          <AnimatedSection className="text-center mb-16 sm:mb-24">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               The People
             </p>
@@ -236,7 +236,7 @@ export default function AboutPage() {
           Mobile: explicit h-[65vh] overrides the 21/9 aspect-ratio so the section is
           tall enough to show the team properly. Desktop: h-auto restores the cinematic crop. */}
       <section
-        className="relative overflow-hidden h-[65vh] md:h-auto"
+        className="relative overflow-hidden h-[65vh] md:h-auto border-t border-white/5"
         style={{ aspectRatio: "21/9" }}
       >
         <Image
@@ -248,12 +248,15 @@ export default function AboutPage() {
           className="object-cover object-[center_40%] md:object-[center_25%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent" />
+        {/* Top fade — blends from bg-night team section */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-night to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/20 to-transparent" />
         <AnimatedSection
           direction="none"
-          className="absolute inset-0 flex items-end justify-center pb-14 sm:pb-16"
+          className="absolute inset-0 flex items-end justify-center pb-14 sm:pb-20"
         >
           <div className="text-center px-6">
+            <div className="w-8 h-px bg-gold/30 mx-auto mb-6" />
             <p className="font-display text-2xl sm:text-3xl md:text-4xl font-light italic text-ivory/90 text-balance">
               One team. One craft. One experience.
             </p>

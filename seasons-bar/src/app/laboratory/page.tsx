@@ -104,7 +104,7 @@ export default function LaboratoryPage() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-night/95 via-night/70 to-night/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-night/80 via-transparent to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-night to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <AnimatedSection direction="up" className="max-w-xl">
@@ -134,24 +134,26 @@ export default function LaboratoryPage() {
       </section>
 
       {/* MANIFESTO */}
-      <section className="bg-night py-16 sm:py-24 md:py-36 border-b border-white/5">
+      <section className="bg-night py-24 sm:py-40 md:py-56 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1.2}>
+            <div className="w-8 h-px bg-gold/30 mx-auto mb-12" />
             <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/85 leading-relaxed text-balance">
               &ldquo;A recipe is only the beginning. The laboratory is where we
               find out what a cocktail truly wants to become.&rdquo;
             </blockquote>
-            <p className="font-sans text-xs text-gold/60 uppercase tracking-widest2 mt-8">
+            <p className="font-sans text-xs text-gold/60 uppercase tracking-widest2 mt-10">
               — Seasons Head Bartender
             </p>
+            <div className="w-16 h-px bg-gold/20 mx-auto mt-12" />
           </AnimatedSection>
         </div>
       </section>
 
       {/* VIDEO SECTION */}
-      <section className="bg-night-2 py-24 md:py-32">
+      <section className="bg-night-2 py-24 md:py-36">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               Behind the Process
             </p>
@@ -226,9 +228,9 @@ export default function LaboratoryPage() {
       </section>
 
       {/* TECHNIQUES */}
-      <section className="bg-night py-16 sm:py-24 md:py-36">
+      <section className="bg-night py-20 sm:py-32 md:py-44 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="mb-12 sm:mb-16">
+          <AnimatedSection className="mb-16 sm:mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               Our Methods
             </p>
@@ -258,9 +260,9 @@ export default function LaboratoryPage() {
       </section>
 
       {/* LAB COCKTAILS */}
-      <section className="bg-night-2 py-16 sm:py-24 md:py-36 border-t border-white/5">
+      <section className="bg-night-2 py-20 sm:py-32 md:py-48 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-20">
+          <AnimatedSection className="text-center mb-24 sm:mb-32">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               Experimental Series
             </p>
@@ -333,20 +335,23 @@ export default function LaboratoryPage() {
       </section>
 
       {/* CLOSING */}
-      <section
-        className="relative overflow-hidden flex items-center justify-center h-[58vh] md:h-auto"
-        style={{ aspectRatio: "21/9" }}
-      >
+      <section className="relative overflow-hidden flex items-center justify-center h-[58vh] md:h-auto md:aspect-[21/9] border-t border-white/5">
         <Image
           src="/images/CoolDoc.jpeg"
           alt="Laboratory spirit"
           fill
-          className="object-cover object-[center_25%] md:object-[center_15%]"
+          className="object-cover object-[center_30%] md:object-[center_15%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/80" />
-        <AnimatedSection direction="none" className="relative z-10 text-center px-6">
-          <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/80 max-w-2xl mx-auto leading-relaxed text-balance">
+        {/* Top fade from bg-night-2 lab cocktails section */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-night-2 to-transparent" />
+        <div className="absolute inset-0 bg-night/75" />
+        <AnimatedSection direction="none" className="relative z-10 w-full text-center px-6">
+          <div className="w-8 h-px bg-gold/30 mx-auto mb-8" />
+          <p
+            className="font-display font-light italic text-ivory/80 max-w-2xl mx-auto leading-relaxed text-balance"
+            style={{ fontSize: "clamp(1.35rem, 4vw, 3.25rem)" }}
+          >
             &ldquo;Curiosity is our most important ingredient.&rdquo;
           </p>
         </AnimatedSection>

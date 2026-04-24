@@ -43,10 +43,10 @@ export default function FindUsPage() {
       </section>
 
       {/* INFO + MAP */}
-      <section className="bg-night py-0">
+      <section className="bg-night py-0 border-t border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
           {/* Info Panel */}
-          <div className="flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 py-16 sm:py-20 bg-night-2 order-2 lg:order-1">
+          <div className="flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 py-20 sm:py-28 bg-night-2 order-2 lg:order-1">
             <AnimatedSection direction="left">
               {/* Address */}
               <div className="mb-14">
@@ -145,9 +145,9 @@ export default function FindUsPage() {
       </section>
 
       {/* HOW TO FIND US */}
-      <section className="bg-night py-24 border-t border-white/5">
+      <section className="bg-night py-28 sm:py-40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="mb-14">
+          <AnimatedSection className="mb-16 sm:mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               Getting Here
             </p>
@@ -186,7 +186,7 @@ export default function FindUsPage() {
 
       {/* AMBIENCE STRIP */}
       <section
-        className="relative overflow-hidden h-[52vh] md:h-auto"
+        className="relative overflow-hidden h-[55vh] md:h-auto border-t border-white/5"
         style={{ aspectRatio: "21/9" }}
       >
         <Image
@@ -196,11 +196,14 @@ export default function FindUsPage() {
           className="object-cover object-[center_45%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-night/70" />
+        {/* Top fade from bg-night directions section */}
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-night to-transparent" />
+        <div className="absolute inset-0 bg-night/65" />
         <AnimatedSection
           direction="none"
-          className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center px-6"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-5 text-center px-6"
         >
+          <div className="w-8 h-px bg-gold/30" />
           <p className="font-sans text-xs tracking-widest3 uppercase text-gold">
             Open every evening
           </p>

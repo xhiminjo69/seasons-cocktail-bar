@@ -190,7 +190,7 @@ export default function MenuPage() {
       {/* HERO */}
       <section className="bg-night border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-20 py-12 lg:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-20 py-16 lg:py-0">
 
             {/* Text */}
             <div className="order-2 lg:order-1 lg:py-28">
@@ -247,7 +247,7 @@ export default function MenuPage() {
       </section>
 
       {/* MENU LIST */}
-      <section className="bg-night py-12 md:py-16">
+      <section className="bg-night py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6">
           {filtered.map((cocktail, i) => (
             <AnimatedSection key={cocktail.name} delay={(i % 6) * 0.05}>
@@ -272,14 +272,20 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* NOTE AT BOTTOM */}
-      <section className="bg-night border-t border-white/5 py-16">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="font-sans text-xs text-muted leading-relaxed max-w-md mx-auto">
-            All cocktails are crafted to order. Please inform us of any
-            allergies or dietary requirements. Our menu changes seasonally — ask
-            your bartender about today&apos;s specials.
-          </p>
+      {/* CLOSING EDITORIAL */}
+      <section className="bg-night border-t border-white/5 py-24 sm:py-36 md:py-48">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <AnimatedSection direction="none" duration={1.2}>
+            <div className="w-8 h-px bg-gold/30 mx-auto mb-10" />
+            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-10">
+              A note on our craft
+            </p>
+            <p className="font-display text-xl sm:text-2xl font-light italic text-ivory/60 leading-relaxed text-balance mb-12">
+              All cocktails are crafted to order. Our menu breathes with the
+              seasons — ask your bartender about today&rsquo;s specials.
+            </p>
+            <div className="w-16 h-px bg-gold/20 mx-auto" />
+          </AnimatedSection>
         </div>
       </section>
 
