@@ -65,7 +65,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-luxury ${
           scrolled || !isHome
-            ? "bg-night/95 backdrop-blur-md border-b border-white/5 py-4"
+            ? "bg-night/98 backdrop-blur-xl border-b border-white/8 py-4"
             : "bg-transparent py-6"
         }`}
       >
@@ -92,7 +92,7 @@ export default function Navbar() {
                 className={`font-sans text-xs tracking-widest2 uppercase transition-colors duration-300 relative group ${
                   pathname === item.href
                     ? "text-gold"
-                    : "text-ivory/70 hover:text-ivory"
+                    : "text-ivory/80 hover:text-ivory"
                 }`}
               >
                 {item.label}
@@ -113,18 +113,18 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <span
-              className={`block h-px bg-ivory transition-all duration-400 ease-luxury ${
-                menuOpen ? "w-6 rotate-45 translate-y-[9px]" : "w-6"
+              className={`block h-[1.5px] bg-ivory transition-all duration-400 ease-luxury ${
+                menuOpen ? "w-6 rotate-45 translate-y-[8.5px]" : "w-6"
               }`}
             />
             <span
-              className={`block h-px bg-ivory transition-all duration-400 ease-luxury ${
+              className={`block h-[1.5px] bg-ivory transition-all duration-400 ease-luxury ${
                 menuOpen ? "w-0 opacity-0" : "w-4"
               }`}
             />
             <span
-              className={`block h-px bg-ivory transition-all duration-400 ease-luxury ${
-                menuOpen ? "w-6 -rotate-45 -translate-y-[9px]" : "w-6"
+              className={`block h-[1.5px] bg-ivory transition-all duration-400 ease-luxury ${
+                menuOpen ? "w-6 -rotate-45 -translate-y-[8.5px]" : "w-6"
               }`}
             />
           </button>
@@ -138,10 +138,10 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-40 bg-night flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-night-2 flex flex-col items-center justify-center"
           >
             <div
-              className="absolute inset-0 opacity-5"
+              className="absolute inset-0 opacity-[0.08]"
               style={{
                 backgroundImage: "url('/images/cocktailbest.jpeg')",
                 backgroundSize: "cover",
@@ -163,7 +163,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className={`font-display text-[2.6rem] sm:text-5xl md:text-6xl font-light italic tracking-wide transition-colors duration-300 block text-center ${
+                    className={`font-display text-[2.4rem] sm:text-5xl md:text-6xl font-light italic tracking-wide transition-colors duration-300 block text-center text-shadow-sm ${
                       pathname === item.href
                         ? "text-gold"
                         : "text-ivory hover:text-gold"

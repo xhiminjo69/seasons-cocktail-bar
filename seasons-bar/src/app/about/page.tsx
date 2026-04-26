@@ -70,12 +70,12 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-night/20" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 sm:pb-20 w-full">
           <AnimatedSection direction="up">
-            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
+            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4 text-shadow-sm">
               About Us
             </p>
-            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none text-shadow-md">
               Our Story
             </h1>
           </AnimatedSection>
@@ -83,7 +83,7 @@ export default function AboutPage() {
       </section>
 
       {/* STORY */}
-      <section className="bg-night py-24 sm:py-36 md:py-48">
+      <section className="bg-night py-16 sm:py-28 md:py-44">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             <AnimatedSection direction="left">
@@ -123,7 +123,7 @@ export default function AboutPage() {
                   className="object-cover object-[center_40%]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-night/10" />
+                <div className="absolute inset-0 bg-night/5" />
               </div>
               {/* On mobile: positioned inside the image; on md+: decorative bleed outside */}
               <div className="absolute bottom-4 left-4 md:-bottom-6 md:-left-6 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-night-2 border border-white/5 flex items-center justify-center">
@@ -142,9 +142,9 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="bg-night-2 py-20 sm:py-32 md:py-48 border-t border-white/5">
+      <section className="bg-night-2 py-14 sm:py-28 md:py-40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-24 sm:mb-32">
+          <AnimatedSection className="text-center mb-16 sm:mb-28">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               What We Stand For
             </p>
@@ -187,7 +187,7 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-night py-20 sm:py-32 md:py-48 border-t border-white/5">
+      <section className="bg-night py-14 sm:py-28 md:py-40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="text-center mb-16 sm:mb-24">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
@@ -223,7 +223,7 @@ export default function AboutPage() {
                     </h3>
                   </div>
                 </div>
-                <blockquote className="font-display text-lg font-light italic text-ivory/60">
+                <blockquote className="font-display text-lg font-light italic text-ivory/75">
                   &ldquo;{member.quote}&rdquo;
                 </blockquote>
               </AnimatedSection>
@@ -250,7 +250,7 @@ export default function AboutPage() {
         />
         {/* Top fade — blends from bg-night team section */}
         <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-night to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-night/80 via-night/15 to-transparent" />
         <AnimatedSection
           direction="none"
           className="absolute inset-0 flex items-end justify-center pb-14 sm:pb-20"

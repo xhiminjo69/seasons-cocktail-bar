@@ -237,7 +237,7 @@ export default function MenuPage() {
               className={`font-sans text-xs tracking-widest2 uppercase whitespace-nowrap transition-all duration-300 pb-1 border-b min-h-[44px] flex items-end ${
                 active === cat
                   ? "text-gold border-gold"
-                  : "text-ivory/40 border-transparent hover:text-ivory/70"
+                  : "text-ivory/55 border-transparent hover:text-ivory/80"
               }`}
             >
               {cat}
@@ -256,14 +256,14 @@ export default function MenuPage() {
                 className="group w-full text-left border-b border-white/8 py-5 sm:py-6 flex items-center justify-between gap-4 sm:gap-6 transition-colors duration-200 hover:border-gold/30 min-h-[64px]"
               >
                 <div className="flex items-baseline gap-4 sm:gap-5 min-w-0">
-                  <span className="font-sans text-[10px] tracking-widest2 uppercase text-gold/60 shrink-0 w-16 sm:w-20 hidden sm:block">
+                  <span className="font-sans text-[10px] tracking-widest2 uppercase text-gold/75 shrink-0 w-16 sm:w-20 hidden sm:block">
                     {cocktail.spirit.replace(" Based", "")}
                   </span>
                   <span className="font-display text-2xl sm:text-3xl font-light text-ivory group-hover:text-gold transition-colors duration-200">
                     {cocktail.name}
                   </span>
                 </div>
-                <span className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/20 group-hover:text-gold/60 transition-colors duration-200 shrink-0">
+                <span className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/35 group-hover:text-gold/70 transition-colors duration-200 shrink-0">
                   View ↗
                 </span>
               </button>
@@ -280,7 +280,7 @@ export default function MenuPage() {
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-10">
               A note on our craft
             </p>
-            <p className="font-display text-xl sm:text-2xl font-light italic text-ivory/60 leading-relaxed text-balance mb-12">
+            <p className="font-display text-xl sm:text-2xl font-light italic text-ivory/75 leading-relaxed text-balance mb-12">
               All cocktails are crafted to order. Our menu breathes with the
               seasons — ask your bartender about today&rsquo;s specials.
             </p>
@@ -323,7 +323,7 @@ export default function MenuPage() {
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-ivory leading-tight mb-5">
                 {selected.name}
               </h2>
-              <p className="font-sans text-sm text-ivory/60 leading-relaxed mb-6 sm:mb-8">
+              <p className="font-sans text-sm text-ivory/75 leading-relaxed mb-6 sm:mb-8">
                 {selected.description}
               </p>
               <div className="border-t border-white/8 pt-5 sm:pt-6">
@@ -332,13 +332,13 @@ export default function MenuPage() {
                 </p>
                 <ul className="space-y-1.5">
                   {selected.ingredients.map((ing) => (
-                    <li key={ing} className="font-sans text-xs text-ivory/40">
+                    <li key={ing} className="font-sans text-xs text-ivory/60">
                       {ing}
                     </li>
                   ))}
                 </ul>
               </div>
-              <span className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/20 mt-6">
+              <span className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/35 mt-6">
                 {selected.category}
               </span>
             </div>

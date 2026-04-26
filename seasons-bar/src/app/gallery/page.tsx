@@ -66,12 +66,12 @@ export default function GalleryPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-night/15" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 sm:pb-20 w-full">
           <AnimatedSection direction="up">
-            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
+            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4 text-shadow-sm">
               Moments
             </p>
-            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none text-shadow-md">
               Gallery
             </h1>
           </AnimatedSection>
@@ -83,7 +83,7 @@ export default function GalleryPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection direction="none">
             <div className="w-8 h-px bg-gold/30 mx-auto mb-8" />
-            <p className="font-display text-lg sm:text-xl md:text-2xl font-light italic text-ivory/70 leading-relaxed text-balance">
+            <p className="font-display text-lg sm:text-xl md:text-2xl font-light italic text-ivory/80 leading-relaxed text-balance">
               &ldquo;Every image is a fragment of the Seasons experience —
               the light, the craft, the people, the night.&rdquo;
             </p>
@@ -95,14 +95,14 @@ export default function GalleryPage() {
       {/* MASONRY GRID */}
       <section className="bg-night py-12 sm:py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4">
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-2 sm:gap-3 md:gap-4">
             {images.map((img, i) => (
               <AnimatedSection
                 key={img.src + i}
                 delay={(i % 4) * 0.06}
                 direction="none"
                 duration={0.7}
-                className="break-inside-avoid mb-3 md:mb-4"
+                className="break-inside-avoid mb-2 sm:mb-3 md:mb-4"
               >
                 <div
                   className="relative overflow-hidden cursor-pointer group"
@@ -155,13 +155,13 @@ export default function GalleryPage() {
         />
         {/* Top fade from bg-night grid section */}
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-night to-transparent" />
-        <div className="absolute inset-0 bg-night/60" />
+        <div className="absolute inset-0 bg-night/50" />
         <AnimatedSection
           direction="none"
           className="absolute inset-0 flex flex-col items-center justify-center gap-5 text-center px-6"
         >
           <div className="w-8 h-px bg-gold/30" />
-          <p className="font-display text-2xl sm:text-4xl md:text-5xl font-light italic text-ivory/90 text-balance">
+          <p className="font-display text-2xl sm:text-4xl md:text-5xl font-light italic text-ivory text-balance text-shadow-sm">
             Every evening is a new frame.
           </p>
         </AnimatedSection>

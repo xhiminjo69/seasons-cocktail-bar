@@ -9,14 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        night: "#07070e",
-        "night-2": "#0d0d1a",
-        "night-3": "#141428",
+        night: "#0d0d1f",
+        "night-2": "#121228",
+        "night-3": "#191940",
         gold: "#c9a96e",
         "gold-hover": "#e0c285",
         champagne: "#e8d5a3",
         ivory: "#f5f0e8",
-        muted: "#7a7468",
+        muted: "#9b9790",
         sage: "#7a9b80",
       },
       fontFamily: {

@@ -65,9 +65,9 @@ export default function HomePage() {
             sizes="100vw"
           />
           {/* Top vignette — keeps nav area readable, fades out before reaching the cocktail */}
-          <div className="absolute inset-0 bg-gradient-to-b from-night/80 via-night/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/10 to-transparent" />
           {/* Bottom fade — grounds the section */}
-          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/30 to-transparent" />
         </motion.div>
 
         <motion.div
@@ -92,7 +92,7 @@ export default function HomePage() {
                 delay: 0.2,
                 ease: [0.25, 0.1, 0, 1],
               }}
-              className="font-display font-light text-ivory leading-none uppercase tracking-wider sm:tracking-widest2"
+              className="font-display font-light text-ivory leading-none uppercase tracking-wider sm:tracking-widest2 text-shadow-md"
               style={{ fontSize: "clamp(3rem, 13vw, 14rem)" }}
             >
               Seasons
@@ -107,7 +107,7 @@ export default function HomePage() {
               delay: 0.7,
               ease: [0.25, 0.1, 0, 1],
             }}
-            className="font-display text-lg sm:text-xl md:text-2xl font-light italic text-champagne/80"
+            className="font-display text-lg sm:text-xl md:text-2xl font-light italic text-champagne/90 text-shadow-sm"
           >
             Where every sip tells a story
           </motion.p>
@@ -119,7 +119,7 @@ export default function HomePage() {
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="font-sans text-[10px] text-ivory/30 uppercase tracking-widest2">
+          <span className="font-sans text-[10px] text-ivory/50 uppercase tracking-widest2">
             Scroll
           </span>
           <motion.div
@@ -131,7 +131,7 @@ export default function HomePage() {
       </section>
 
       {/* MANIFESTO */}
-      <section className="bg-night border-t border-white/5 py-24 sm:py-40 md:py-56">
+      <section className="bg-night border-t border-white/5 py-16 sm:py-32 md:py-48">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1.2}>
             <div className="w-8 h-px bg-gold/30 mx-auto mb-10" />
@@ -149,9 +149,9 @@ export default function HomePage() {
       </section>
 
       {/* FEATURED COCKTAILS */}
-      <section className="bg-night-2 border-t border-white/5 py-20 sm:py-32 md:py-44">
+      <section className="bg-night-2 border-t border-white/5 py-14 sm:py-28 md:py-40">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-20 sm:mb-28">
+          <AnimatedSection className="text-center mb-14 sm:mb-24">
             <div className="w-8 h-px bg-gold/20 mx-auto mb-10" />
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-5">
               Crafted for You
@@ -194,7 +194,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <AnimatedSection className="text-center mt-20 sm:mt-28" delay={0.3}>
+          <AnimatedSection className="text-center mt-14 sm:mt-24" delay={0.3}>
             <Link
               href="/menu"
               className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase text-ivory/70 hover:text-gold transition-colors duration-300 group"
@@ -219,7 +219,7 @@ export default function HomePage() {
             className="object-cover object-[center_45%]"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-night/20" />
+          <div className="absolute inset-0 bg-night/15" />
         </AnimatedSection>
         <AnimatedSection
           direction="right"
@@ -261,11 +261,11 @@ export default function HomePage() {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 85% 75% at 45% 58%, rgba(7,7,14,0.18) 0%, rgba(7,7,14,0.62) 100%)",
+                "radial-gradient(ellipse 85% 75% at 45% 58%, rgba(13,13,31,0.12) 0%, rgba(13,13,31,0.55) 100%)",
             }}
           />
           {/* Top fade — full coverage on mobile to blend from previous section, navbar-only on desktop */}
-          <div className="absolute inset-x-0 top-0 h-[50%] md:h-[38%] bg-gradient-to-b from-night via-night/40 to-transparent md:from-night/60 md:via-transparent" />
+          <div className="absolute inset-x-0 top-0 h-[48%] md:h-[35%] bg-gradient-to-b from-night via-night/35 to-transparent md:from-night/50 md:via-transparent" />
           {/* Bottom fade — section transition */}
           <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-night to-transparent" />
         </div>
@@ -293,7 +293,7 @@ export default function HomePage() {
           {/* Horizontal gold rule */}
           <div className="w-14 h-px bg-gold/40 mx-auto mb-8" />
 
-          <p className="font-sans text-sm text-ivory/80 leading-loose mb-12 max-w-sm mx-auto">
+          <p className="font-sans text-sm text-ivory/90 leading-loose mb-12 max-w-sm mx-auto text-shadow-sm">
             Where curiosity meets craft. Our bartenders push boundaries through
             seasonal ingredients, precision techniques, and unexpected textures.
             Every signature cocktail begins as an experiment in pleasure.
@@ -364,7 +364,7 @@ export default function HomePage() {
       </section>
 
       {/* BOTTOM CTA STRIP */}
-      <section className="bg-night-2 border-t border-white/10 py-28 sm:py-44">
+      <section className="bg-night-2 border-t border-white/10 py-16 sm:py-36">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1}>
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">

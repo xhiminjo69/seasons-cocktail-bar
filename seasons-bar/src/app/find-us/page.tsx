@@ -30,12 +30,12 @@ export default function FindUsPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-night/20" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 sm:pb-20 w-full">
           <AnimatedSection direction="up">
-            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
+            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4 text-shadow-sm">
               Location
             </p>
-            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none text-shadow-md">
               Find Us
             </h1>
           </AnimatedSection>
@@ -105,7 +105,7 @@ export default function FindUsPage() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-4 group"
                     >
-                      <span className="font-sans text-[10px] tracking-widest2 uppercase text-muted/60 w-20">
+                      <span className="font-sans text-[10px] tracking-widest2 uppercase text-muted/80 w-20">
                         {s.label}
                       </span>
                       <span className="font-display text-xl font-light text-ivory/80 group-hover:text-gold transition-colors duration-300">
@@ -145,7 +145,7 @@ export default function FindUsPage() {
       </section>
 
       {/* HOW TO FIND US */}
-      <section className="bg-night py-28 sm:py-40 border-t border-white/5">
+      <section className="bg-night py-16 sm:py-32 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="mb-16 sm:mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
@@ -198,16 +198,16 @@ export default function FindUsPage() {
         />
         {/* Top fade from bg-night directions section */}
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-night to-transparent" />
-        <div className="absolute inset-0 bg-night/65" />
+        <div className="absolute inset-0 bg-night/55" />
         <AnimatedSection
           direction="none"
           className="absolute inset-0 flex flex-col items-center justify-center gap-5 text-center px-6"
         >
           <div className="w-8 h-px bg-gold/30" />
-          <p className="font-sans text-xs tracking-widest3 uppercase text-gold">
+          <p className="font-sans text-xs tracking-widest3 uppercase text-gold text-shadow-sm">
             Open every evening
           </p>
-          <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-light italic text-ivory text-balance">
+          <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-light italic text-ivory text-balance text-shadow-md">
             We&rsquo;ll see you tonight
           </h2>
         </AnimatedSection>

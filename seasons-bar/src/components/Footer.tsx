@@ -42,7 +42,7 @@ export default function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="font-sans text-sm text-ivory/60 hover:text-ivory transition-colors duration-300"
+                className="font-sans text-sm text-ivory/70 hover:text-ivory transition-colors duration-300"
               >
                 {item.label}
               </Link>
@@ -54,18 +54,18 @@ export default function Footer() {
               <h4 className="font-sans text-xs tracking-widest2 uppercase text-gold mb-4">
                 Opening Hours
               </h4>
-              <div className="space-y-2 font-sans text-sm text-ivory/60">
+              <div className="space-y-2 font-sans text-sm text-ivory/70">
                 <div className="flex justify-between gap-3">
                   <span>Mon — Thu</span>
-                  <span className="text-ivory/40 tabular-nums">17:00 — 01:00</span>
+                  <span className="text-ivory/55 tabular-nums">17:00 — 01:00</span>
                 </div>
                 <div className="flex justify-between gap-3">
                   <span>Fri — Sat</span>
-                  <span className="text-ivory/40 tabular-nums">17:00 — 03:00</span>
+                  <span className="text-ivory/55 tabular-nums">17:00 — 03:00</span>
                 </div>
                 <div className="flex justify-between gap-3">
                   <span>Sunday</span>
-                  <span className="text-ivory/40 tabular-nums">17:00 — 01:00</span>
+                  <span className="text-ivory/55 tabular-nums">17:00 — 01:00</span>
                 </div>
               </div>
             </div>
@@ -84,11 +84,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-sans text-xs text-muted/60">
+          <p className="font-sans text-xs text-muted/80">
             © {new Date().getFullYear()} Seasons Cocktail Bar. All rights
             reserved.
           </p>
-          <p className="font-sans text-xs text-muted/40 tracking-wider">
+          <p className="font-sans text-xs text-muted/60 tracking-wider">
             Lungomare, Vlorë, Albania
           </p>
         </div>

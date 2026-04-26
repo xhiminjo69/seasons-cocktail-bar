@@ -103,7 +103,7 @@ export default function LaboratoryPage() {
             className="object-cover object-[center_10%]"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-night/95 via-night/70 to-night/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-night/90 via-night/60 to-night/20" />
           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-night to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -111,12 +111,12 @@ export default function LaboratoryPage() {
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-6">
               Craft · Science · Art
             </p>
-            <h1 className="font-display font-light text-ivory leading-none mb-6"
+            <h1 className="font-display font-light text-ivory leading-none mb-6 text-shadow-md"
               style={{ fontSize: "clamp(3.5rem, 13vw, 10rem)" }}>
               The<br />
               <em className="text-gold">Lab</em>
             </h1>
-            <p className="font-sans text-sm text-ivory/60 leading-loose max-w-sm">
+            <p className="font-sans text-sm text-ivory/80 leading-loose max-w-sm">
               Where curiosity has no closing time. Our bartenders are
               experimenters — perpetually questioning what a cocktail can be,
               chasing the moment when craft becomes something more.
@@ -134,11 +134,11 @@ export default function LaboratoryPage() {
       </section>
 
       {/* MANIFESTO */}
-      <section className="bg-night py-24 sm:py-40 md:py-56 border-b border-white/5">
+      <section className="bg-night py-16 sm:py-28 md:py-44 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1.2}>
             <div className="w-8 h-px bg-gold/30 mx-auto mb-12" />
-            <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/85 leading-relaxed text-balance">
+            <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light italic text-ivory/90 leading-relaxed text-balance">
               &ldquo;A recipe is only the beginning. The laboratory is where we
               find out what a cocktail truly wants to become.&rdquo;
             </blockquote>
@@ -151,9 +151,9 @@ export default function LaboratoryPage() {
       </section>
 
       {/* VIDEO SECTION */}
-      <section className="bg-night-2 py-24 md:py-36">
+      <section className="bg-night-2 py-14 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="text-center mb-20">
+          <AnimatedSection className="text-center mb-12 sm:mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
               Behind the Process
             </p>
@@ -228,7 +228,7 @@ export default function LaboratoryPage() {
       </section>
 
       {/* TECHNIQUES */}
-      <section className="bg-night py-20 sm:py-32 md:py-44 border-t border-white/5">
+      <section className="bg-night py-14 sm:py-28 md:py-40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="mb-16 sm:mb-20">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
@@ -260,7 +260,7 @@ export default function LaboratoryPage() {
       </section>
 
       {/* LAB COCKTAILS */}
-      <section className="bg-night-2 py-20 sm:py-32 md:py-48 border-t border-white/5">
+      <section className="bg-night-2 py-14 sm:py-28 md:py-40 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="text-center mb-24 sm:mb-32">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
@@ -283,7 +283,7 @@ export default function LaboratoryPage() {
                 className="group bg-night-2"
               >
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-0">
-                  <div className="relative aspect-[4/5] sm:aspect-[4/3] md:aspect-auto md:min-h-[300px] overflow-hidden">
+                  <div className="relative aspect-[16/9] sm:aspect-[4/3] md:aspect-auto md:min-h-[300px] overflow-hidden">
                     <Image
                       src={cocktail.image}
                       alt={cocktail.name}
@@ -296,7 +296,7 @@ export default function LaboratoryPage() {
 
                   <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
                     <div className="flex items-center gap-4 mb-3">
-                      <span className="font-display text-5xl sm:text-6xl font-light text-gold/15 leading-none">
+                      <span className="font-display text-5xl sm:text-6xl font-light text-gold/25 leading-none">
                         {cocktail.number}
                       </span>
                     </div>
@@ -312,7 +312,7 @@ export default function LaboratoryPage() {
                   </div>
 
                   <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center border-t md:border-t-0 md:border-l border-white/5">
-                    <p className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/30 mb-4">
+                    <p className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/45 mb-4">
                       Components
                     </p>
                     <ul className="space-y-2">
@@ -345,11 +345,11 @@ export default function LaboratoryPage() {
         />
         {/* Top fade from bg-night-2 lab cocktails section */}
         <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-night-2 to-transparent" />
-        <div className="absolute inset-0 bg-night/75" />
+        <div className="absolute inset-0 bg-night/60" />
         <AnimatedSection direction="none" className="relative z-10 w-full text-center px-6">
           <div className="w-8 h-px bg-gold/30 mx-auto mb-8" />
           <p
-            className="font-display font-light italic text-ivory/80 max-w-2xl mx-auto leading-relaxed text-balance"
+            className="font-display font-light italic text-ivory/90 max-w-2xl mx-auto leading-relaxed text-balance text-shadow-sm"
             style={{ fontSize: "clamp(1.35rem, 4vw, 3.25rem)" }}
           >
             &ldquo;Curiosity is our most important ingredient.&rdquo;
