@@ -159,7 +159,7 @@ export default function GalleryPage() {
         >
           <div className="w-8 h-px bg-gold/30" />
           <p className="font-display text-2xl sm:text-4xl md:text-5xl font-light italic text-ivory text-balance text-shadow-sm">
-            Every evening is a new frame.
+            Every evening is a new STORY.
           </p>
         </AnimatedSection>
       </section>

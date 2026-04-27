@@ -58,7 +58,7 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[100svh] sm:h-[80vh] min-h-[580px] flex items-end overflow-hidden">
+      <section className="relative h-[100svh] sm:h-[80vh] min-h-[580px] flex items-center sm:items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/ambienti.jpg"
@@ -68,15 +68,16 @@ export default function AboutPage() {
             className="object-cover object-[center_30%] sm:object-[center_45%]"
             sizes="100vw"
           />
-          {/* Heavier gradient on mobile so text stays legible over any focal point */}
-          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/75 to-night/40 sm:from-night sm:via-night/60 sm:to-night/20" />
+          {/* Mobile: uniform dark overlay so centered text is legible anywhere */}
+          <div className="absolute inset-0 bg-night/60 sm:bg-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-transparent sm:from-night sm:via-night/60 sm:to-night/20" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 sm:pb-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-0 sm:pb-20 w-full text-center sm:text-left">
           <AnimatedSection direction="up">
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4 text-shadow-sm">
               About Us
             </p>
-            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-ivory leading-none text-shadow-md">
+            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-light text-ivory leading-none text-shadow-md">
               Our Story
             </h1>
           </AnimatedSection>
