@@ -321,7 +321,7 @@ export default function LaboratoryPage() {
                 className="group bg-night-2"
               >
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-0">
-                  <div className="relative aspect-[16/9] sm:aspect-[4/3] md:aspect-auto md:min-h-[300px] overflow-hidden">
+                  <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[300px] overflow-hidden">
                     <Image
                       src={cocktail.image}
                       alt={cocktail.name}
