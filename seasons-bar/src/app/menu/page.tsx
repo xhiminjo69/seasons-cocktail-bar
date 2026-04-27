@@ -1,176 +1,60 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 
-type Spirit = "All" | "Gin" | "Vodka" | "Bourbon" | "Whisky" | "Tequila" | "Mezcal" | "Sparkling";
+type Category = "All" | "Signatures" | "Twist On Classics" | "Gin Tonic Delights";
 
 interface Cocktail {
   name: string;
-  spirit: string;
-  ingredients: string[];
-  description: string;
-  image: string;
-  objectPosition?: string;
+  ingredients: string;
+  category: Exclude<Category, "All">;
 }
 
 const cocktails: Cocktail[] = [
-  {
-    name: "Aegean Drift",
-    spirit: "Gin Based",
-    ingredients: ["Hendrick's gin", "cucumber", "elderflower liqueur", "fresh lime", "sea salt"],
-    description:
-      "Inspired by the clarity of Adriatic waters. Light, botanical, and with a whisper of the sea.",
-    image: "/images/tabaka.jpeg",
-    objectPosition: "object-center",
-  },
-  {
-    name: "Golden Hour",
-    spirit: "Sparkling",
-    ingredients: ["Aperol", "Prosecco", "blood orange", "rosemary syrup", "citrus foam"],
-    description:
-      "A sunset poured into a glass. Bittersweet, effervescent, and impossibly warm.",
-    image: "/images/cocktailbest.jpeg",
-    objectPosition: "object-[center_20%]",
-  },
-  {
-    name: "Vlora Nights",
-    spirit: "Mezcal Based",
-    ingredients: ["Mezcal", "blackberry", "lemon", "agave", "activated charcoal"],
-    description:
-      "Dark as a Mediterranean night. Smoky depth, sweet intrigue, and a long finish.",
-    image: "/images/cocktails19.jpeg",
-    objectPosition: "object-center",
-  },
-  {
-    name: "Season's Kiss",
-    spirit: "Vodka Based",
-    ingredients: ["Vodka", "lychee", "rose water", "lime", "champagne float"],
-    description:
-      "Delicate, floral, and ethereal. Like the first warm evening of the year.",
-    image: "/images/tabaka cool.jpeg",
-    objectPosition: "object-[center_25%]",
-  },
-  {
-    name: "Mistral",
-    spirit: "Gin Based",
-    ingredients: ["Gin", "lavender syrup", "lemon", "wildflower honey", "egg white"],
-    description:
-      "Silky and aromatic. Soft as the wind that crosses the Adriatic.",
-    image: "/images/cocktail2.jpeg",
-    objectPosition: "object-center",
-  },
-  {
-    name: "Copper Sunset",
-    spirit: "Bourbon Based",
-    ingredients: ["Bourbon", "smoked peach", "honey", "lemon", "cedar smoke"],
-    description:
-      "Warm amber complexity with the sweet heat of late summer evenings.",
-    image: "/images/cocktail3.jpeg",
-    objectPosition: "object-[center_30%]",
-  },
-  {
-    name: "Negroni Bianco",
-    spirit: "Gin Based",
-    ingredients: ["Gin", "dry vermouth", "Suze", "grapefruit zest"],
-    description:
-      "A white Negroni — herbaceous, bitter-bright, and entirely elegant.",
-    image: "/images/cocktail5.jpeg",
-    objectPosition: "object-center",
-  },
-  {
-    name: "Penicillin",
-    spirit: "Whisky Based",
-    ingredients: ["Blended Scotch", "lemon", "honey-ginger syrup", "Islay float"],
-    description:
-      "A modern classic with smoky depth and warming ginger fire.",
-    image: "/images/cocktail6.jpeg",
-    objectPosition: "object-[center_20%]",
-  },
-  {
-    name: "Espresso Martini",
-    spirit: "Vodka Based",
-    ingredients: ["Vodka", "fresh espresso", "coffee liqueur", "vanilla", "coffee foam"],
-    description:
-      "Rich, velvety, indulgent. A love letter to late nights and good coffee.",
-    image: "/images/cocktail7.jpeg",
-    objectPosition: "object-[center_30%]",
-  },
-  {
-    name: "Tommy's Margarita",
-    spirit: "Tequila Based",
-    ingredients: ["Blanco tequila", "fresh lime", "agave nectar", "tajín rim"],
-    description:
-      "Pure and clean. The gold standard of simplicity, perfectly balanced.",
-    image: "/images/cocktail8.jpeg",
-    objectPosition: "object-[center_35%]",
-  },
-  {
-    name: "Sea Glass",
-    spirit: "Tequila Based",
-    ingredients: ["Tequila blanco", "blue curaçao", "elderflower", "lime", "soda"],
-    description:
-      "Clear as the Adriatic on a calm morning. Summer in a single sip.",
-    image: "/images/cocktail10.jpeg",
-    objectPosition: "object-center",
-  },
-  {
-    name: "Ember Rose",
-    spirit: "Bourbon Based",
-    ingredients: ["Bourbon", "rose syrup", "lemon", "orange bitters", "dried rose"],
-    description:
-      "Warm, floral, and lingering — the feeling of autumn's first crisp evening.",
-    image: "/images/cocktail11.jpeg",
-    objectPosition: "object-[center_25%]",
-  },
+  // SIGNATURES
+  { name: "African Violet", ingredients: "London Dry Gin, Violet & Blackberry Cordial", category: "Signatures" },
+  { name: "Amalfi", ingredients: "Gin, Limoncello, Aromatic Mint Soda, Raspberry", category: "Signatures" },
+  { name: "Charlize", ingredients: "Gin, Cordial Lime, Vermouth, Maraschino, Orange Water", category: "Signatures" },
+  { name: "Coco Loco", ingredients: "Rum, Coconut Milk, Plantation Papaya, Guava, Chili", category: "Signatures" },
+  { name: "Citrus Circus", ingredients: "Bergamot, Malfy Limone, Limoncello, Paragon Penja Pepper", category: "Signatures" },
+  { name: "Emergency Room", ingredients: "Gin, Flower Extract, Pomegranate Cordial, Spicy Bitter", category: "Signatures" },
+  { name: "French Kiss", ingredients: "Rey Vodka, Strawberry, Peach Schnapps, Flower Aroma", category: "Signatures" },
+  { name: "Floral Sunset", ingredients: "Rum, Amaretto, Peach Schnapps, Hibiscus & Watermelon Cordial", category: "Signatures" },
+  { name: "Le’ Parfume", ingredients: "Gin, Flower & Vanilla Extract, Jasmine Aroma", category: "Signatures" },
+  { name: "Green Garden", ingredients: "London Dry Gin, Basil, Cucumber", category: "Signatures" },
+  { name: "Lotus", ingredients: "Lime, Mezcal Ilegal, Pineapple & Peppercorn Cordial, Jasmine Air", category: "Signatures" },
+  { name: "Loving Me Loving You", ingredients: "Yuu Bal Mezcal, Bergamot Shrub, Guava & Lime Soda", category: "Signatures" },
+  { name: "Insolito", ingredients: "Citadelle Gin, Malic Acid, Celery Bitter, Basil & Cucumber Air", category: "Signatures" },
+  { name: "Midnight Bloom", ingredients: "Dark Rum, White Penja Pepper, Chokeberry & Lavender Cordial, Honey", category: "Signatures" },
+  { name: "Orient Express", ingredients: "Mandarine & Ginger Soda, Jasmine, Lemon, Rum Spicy, Paragon Rue Berry", category: "Signatures" },
+  // TWIST ON CLASSICS
+  { name: "Mezcalita", ingredients: "Yuu Bal Mezcal, Dry Curacao, Lime", category: "Twist On Classics" },
+  { name: "Tiramisu Martini", ingredients: "Tiramisu, Rye Vodka, Borghetti, Cream", category: "Twist On Classics" },
+  { name: "Vodka Sour Maracuja", ingredients: "Rye Vodka, Lemon, Maracuja", category: "Twist On Classics" },
+  { name: "Mezcal Sunset", ingredients: "Lime, Limoncello, Orange Liqueur, Yuu Bal Mezcal, Raspberry & Sage Cordial", category: "Twist On Classics" },
+  { name: "New Fashion", ingredients: "Bourbon Whiskey, Chocolate, Orange Bitter, Peppercorn, Maraschino", category: "Twist On Classics" },
+  { name: "Spicy Paloma", ingredients: "Tequila, Chili Powder, Grapefruit Soda, Chipotle", category: "Twist On Classics" },
+  { name: "Nepal Gimlet", ingredients: "Gin, Lime, Paragon Timur Berry, Strawberry & Basil Cordial", category: "Twist On Classics" },
+  { name: "White Negroni", ingredients: "Gin, White Bitter, White Vermouth, Paragon Timur Berry Cordial", category: "Twist On Classics" },
+  { name: "Negroni Rinforzato", ingredients: "Carpano, Luxardo Bitter, Amaro, Gin, Blackberry & Thyme Cordial, Paragon White Penja Pepper", category: "Twist On Classics" },
+  // GIN TONIC DELIGHTS
+  { name: "Gin Tonic Mediterranean", ingredients: "Mediterranean herbs and botanicals", category: "Gin Tonic Delights" },
+  { name: "Gin Tonic Spicy", ingredients: "A bold mix with a hint of spice", category: "Gin Tonic Delights" },
+  { name: "Gin Tonic Floreal", ingredients: "Floral infusion with fragrant delicate flavour", category: "Gin Tonic Delights" },
+  { name: "Gin Tonic Forestal", ingredients: "Earthy blend inspired by forest freshness", category: "Gin Tonic Delights" },
+  { name: "Gin Tonic Garden", ingredients: "Fresh herbs and garden botanicals", category: "Gin Tonic Delights" },
 ];
 
-const spirits: Spirit[] = ["All", "Gin", "Vodka", "Bourbon", "Whisky", "Tequila", "Mezcal", "Sparkling"];
+const categories: Category[] = ["All", "Signatures", "Twist On Classics", "Gin Tonic Delights"];
+const sections: Exclude<Category, "All">[] = ["Signatures", "Twist On Classics", "Gin Tonic Delights"];
 
 export default function MenuPage() {
-  const [active, setActive] = useState<Spirit>("All");
-  const [selected, setSelected] = useState<Cocktail | null>(null);
+  const [active, setActive] = useState<Category>("All");
 
-  const filtered =
-    active === "All" ? cocktails : cocktails.filter((c) => c.spirit.toLowerCase().startsWith(active.toLowerCase()));
-
-  const closeModal = useCallback(() => setSelected(null), []);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeModal(); };
-    if (selected) document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [selected, closeModal]);
-
-  /* iOS-safe scroll lock — overflow:hidden alone doesn't work on iOS Safari */
-  useEffect(() => {
-    if (selected) {
-      const scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.overflow = "hidden";
-    } else {
-      const top = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
-      if (top) {
-        window.scrollTo(0, -parseInt(top, 10));
-      }
-    }
-    return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
-    };
-  }, [selected]);
+  const sectionsToShow: Exclude<Category, "All">[] =
+    active === "All" ? sections : [active as Exclude<Category, "All">];
 
   return (
     <>
@@ -178,8 +62,6 @@ export default function MenuPage() {
       <section className="bg-night border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-20 py-16 lg:py-0">
-
-            {/* Text */}
             <div className="order-2 lg:order-1 lg:py-28">
               <AnimatedSection direction="up">
                 <p className="font-sans text-[10px] tracking-widest3 text-gold uppercase mb-6">
@@ -195,13 +77,11 @@ export default function MenuPage() {
                 </p>
               </AnimatedSection>
             </div>
-
-            {/* Full poster — natural proportions, fully visible, no cropping */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <AnimatedSection direction="up" delay={0.15} className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[460px] xl:max-w-[520px]">
                 <Image
                   src="/images/fotoo.jpeg"
-                  alt="Paloma Cocktail"
+                  alt="Seasons cocktail"
                   width={600}
                   height={900}
                   priority
@@ -209,57 +89,71 @@ export default function MenuPage() {
                 />
               </AnimatedSection>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* FILTER — sticky below the 64px navbar (py-4 + 32px logo) */}
+      {/* FILTER */}
       <section className="bg-night sticky top-16 z-30 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center gap-5 sm:gap-8 overflow-x-auto scrollbar-none">
-          {spirits.map((s) => (
+          {categories.map((cat) => (
             <button
-              key={s}
-              onClick={() => setActive(s)}
+              key={cat}
+              onClick={() => setActive(cat)}
               className={`font-sans text-xs tracking-widest2 uppercase whitespace-nowrap transition-all duration-300 pb-1 border-b min-h-[44px] flex items-end ${
-                active === s
+                active === cat
                   ? "text-gold border-gold"
-                  : "text-ivory/55 border-transparent hover:text-ivory/80"
+                  : "text-ivory/50 border-transparent hover:text-ivory/80"
               }`}
             >
-              {s}
+              {cat}
             </button>
           ))}
         </div>
       </section>
 
-      {/* MENU LIST */}
+      {/* MENU */}
       <section className="bg-night py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6">
-          {filtered.map((cocktail, i) => (
-            <AnimatedSection key={cocktail.name} delay={(i % 6) * 0.05}>
-              <button
-                onClick={() => setSelected(cocktail)}
-                className="group w-full text-left border-b border-white/8 py-5 sm:py-6 flex items-center justify-between gap-4 sm:gap-6 transition-colors duration-200 hover:border-gold/30 min-h-[64px]"
-              >
-                <div className="flex items-baseline gap-4 sm:gap-5 min-w-0">
-                  <span className="font-sans text-[10px] tracking-widest2 uppercase text-gold/75 shrink-0 w-16 sm:w-20 hidden sm:block">
-                    {cocktail.spirit.replace(" Based", "")}
-                  </span>
-                  <span className="font-display text-2xl sm:text-3xl font-light text-ivory group-hover:text-gold transition-colors duration-200">
-                    {cocktail.name}
-                  </span>
+          {sectionsToShow.map((section, si) => {
+            const items = cocktails.filter((c) => c.category === section);
+            return (
+              <div key={section} className={si > 0 ? "mt-16 sm:mt-24" : ""}>
+                {/* Section header */}
+                <AnimatedSection direction="none">
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-5 h-px bg-gold/50" />
+                    <p className="font-sans text-[10px] tracking-widest3 text-gold uppercase">
+                      {section}
+                    </p>
+                    <div className="flex-1 h-px bg-gold/15" />
+                  </div>
+                </AnimatedSection>
+
+                {/* Cocktail rows */}
+                <div>
+                  {items.map((cocktail, i) => (
+                    <AnimatedSection key={cocktail.name} delay={(i % 8) * 0.04}>
+                      <div className="group border-b border-white/8 py-5 sm:py-6 hover:border-gold/25 transition-colors duration-300">
+                        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-8">
+                          <h3 className="font-display text-2xl sm:text-3xl font-light text-ivory group-hover:text-gold/90 transition-colors duration-300 shrink-0">
+                            {cocktail.name}
+                          </h3>
+                          <p className="font-sans text-xs sm:text-sm text-muted/80 leading-relaxed sm:text-right">
+                            {cocktail.ingredients}
+                          </p>
+                        </div>
+                      </div>
+                    </AnimatedSection>
+                  ))}
                 </div>
-                <span className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/35 group-hover:text-gold/70 transition-colors duration-200 shrink-0">
-                  View ↗
-                </span>
-              </button>
-            </AnimatedSection>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* CLOSING EDITORIAL */}
+      {/* CLOSING */}
       <section className="relative overflow-hidden h-[70vh] md:h-auto md:aspect-[21/9] border-t border-white/5 flex items-center justify-center">
         <Image
           src="/images/fotobukur.jpeg"
@@ -285,70 +179,6 @@ export default function MenuPage() {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* COCKTAIL MODAL */}
-      {selected && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
-          onClick={closeModal}
-        >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-night/90 backdrop-blur-md" />
-
-          {/* Panel — overflow-y-auto so the whole modal scrolls on small screens */}
-          <div
-            className="relative z-10 w-full max-w-3xl bg-night border border-white/10 grid grid-cols-1 sm:grid-cols-2 overflow-y-auto max-h-[92vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Image — capped height on mobile so details are always visible */}
-            <div className="relative aspect-[4/3] sm:aspect-auto sm:min-h-[480px] flex-shrink-0">
-              <Image
-                src={selected.image}
-                alt={selected.name}
-                fill
-                className={`object-cover ${selected.objectPosition ?? "object-center"}`}
-                sizes="(max-width: 640px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-night/60 to-transparent sm:bg-gradient-to-r sm:from-transparent sm:to-night/40" />
-            </div>
-
-            {/* Details */}
-            <div className="flex flex-col justify-center px-6 sm:px-8 py-8 sm:py-10">
-              <p className="font-sans text-[10px] tracking-widest3 text-gold uppercase mb-4">
-                {selected.spirit}
-              </p>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-ivory leading-tight mb-5">
-                {selected.name}
-              </h2>
-              <p className="font-sans text-sm text-ivory/75 leading-relaxed mb-6 sm:mb-8">
-                {selected.description}
-              </p>
-              <div className="border-t border-white/8 pt-5 sm:pt-6">
-                <p className="font-sans text-[10px] tracking-widest2 uppercase text-gold/50 mb-3">
-                  Ingredients
-                </p>
-                <ul className="space-y-1.5">
-                  {selected.ingredients.map((ing) => (
-                    <li key={ing} className="font-sans text-xs text-ivory/60">
-                      {ing}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Close — proper 44px tap target */}
-            <button
-              onClick={closeModal}
-              aria-label="Close"
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 font-sans text-xs text-ivory/40 hover:text-ivory transition-colors duration-200 bg-night/60 backdrop-blur-sm min-w-[44px] min-h-[44px] flex items-center justify-center gap-1"
-            >
-              <span className="hidden sm:inline">Close</span>
-              <span>✕</span>
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 }
