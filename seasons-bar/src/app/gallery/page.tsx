@@ -142,15 +142,12 @@ export default function GalleryPage() {
       </section>
 
       {/* CLOSING STRIP */}
-      <section
-        className="relative overflow-hidden h-[52vh] md:h-auto border-t border-white/5"
-        style={{ aspectRatio: "21/9" }}
-      >
+      <section className="relative overflow-hidden h-[70vh] md:h-auto md:aspect-[21/9] border-t border-white/5">
         <Image
           src="/images/ambienti.jpg"
           alt="Seasons — The Experience"
           fill
-          className="object-cover object-[center_45%]"
+          className="object-cover object-[center_35%] md:object-[center_45%]"
           sizes="100vw"
         />
         {/* Top fade from bg-night grid section */}
