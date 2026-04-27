@@ -8,28 +8,28 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const featuredCocktails = [
   {
-    name: "Aegean Drift",
-    type: "Gin · Elderflower · Sea Salt",
+    name: "African Violet",
+    type: "London Dry Gin · Violet · Blackberry",
     description:
-      "Inspired by the clarity of Adriatic waters. Light, botanical, ethereal.",
+      "A whisper of botanicals — violet and blackberry cordial dancing with London Dry Gin.",
     image: "/images/cocktails17.jpeg",
     position: "object-center",
     aspectRatio: "aspect-[3/4]",
   },
   {
-    name: "Golden Hour",
-    type: "Aperol · Prosecco · Blood Orange",
+    name: "Midnight Bloom",
+    type: "Dark Rum · Lavender · Honey",
     description:
-      "A sunset poured into glass. Effervescent, warm, unforgettable.",
+      "Dark rum meets chokeberry and lavender cordial, grounded by white Penja pepper and honey.",
     image: "/images/cocktail8.jpeg",
     position: "object-[center_30%]",
     aspectRatio: "aspect-[4/5]",
   },
   {
-    name: "Vlora Nights",
-    type: "Mezcal · Blackberry · Agave",
+    name: "Lotus",
+    type: "Mezcal Ilegal · Pineapple · Jasmine",
     description:
-      "Dark as a Mediterranean night. Smoky depth, sweet intrigue.",
+      "Mezcal and pineapple peppercorn cordial lifted by a cloud of jasmine air.",
     image: "/images/cocktails13.jpeg",
     position: "object-[center_55%]",
     aspectRatio: "aspect-[3/4]",
