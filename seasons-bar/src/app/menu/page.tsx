@@ -260,18 +260,28 @@ export default function MenuPage() {
       </section>
 
       {/* CLOSING EDITORIAL */}
-      <section className="bg-night border-t border-white/5 py-24 sm:py-36 md:py-48">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="relative overflow-hidden h-[70vh] md:h-auto md:aspect-[21/9] border-t border-white/5 flex items-center justify-center">
+        <Image
+          src="/images/fotobukur.jpeg"
+          alt="Crafted with care"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-night/70" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-night to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-night to-transparent" />
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection direction="none" duration={1.2}>
             <div className="w-8 h-px bg-gold/30 mx-auto mb-10" />
-            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-10">
+            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-10 text-shadow-sm">
               A note on our craft
             </p>
-            <p className="font-display text-xl sm:text-2xl font-light italic text-ivory/75 leading-relaxed text-balance mb-12">
+            <p className="font-display text-xl sm:text-2xl font-light italic text-ivory/90 leading-relaxed text-balance mb-12 text-shadow-sm">
               All cocktails are crafted to order. Our menu breathes with the
               seasons — ask your bartender about today&rsquo;s specials.
             </p>
-            <div className="w-16 h-px bg-gold/20 mx-auto" />
+            <div className="w-16 h-px bg-gold/30 mx-auto" />
           </AnimatedSection>
         </div>
       </section>
