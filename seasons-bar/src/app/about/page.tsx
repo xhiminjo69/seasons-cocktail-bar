@@ -68,8 +68,8 @@ export default function AboutPage() {
             className="object-cover object-[center_30%] sm:object-[center_45%]"
             sizes="100vw"
           />
-          {/* Mobile: uniform dark overlay so centered text is legible anywhere */}
-          <div className="absolute inset-0 bg-night/60 sm:bg-transparent" />
+          {/* Mobile: uniform overlay so centered text is legible anywhere */}
+          <div className="absolute inset-0 bg-night/55 sm:bg-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-transparent sm:from-night sm:via-night/60 sm:to-night/20" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-0 sm:pb-20 w-full text-center sm:text-left">
