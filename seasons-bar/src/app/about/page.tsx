@@ -58,17 +58,18 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[80vh] min-h-[500px] flex items-end overflow-hidden">
+      <section className="relative h-[100svh] sm:h-[80vh] min-h-[580px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/ambienti.jpg"
             alt="Seasons Bar — Ambience"
             fill
             priority
-            className="object-cover object-[center_45%]"
+            className="object-cover object-[center_30%] sm:object-[center_45%]"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-night/20" />
+          {/* Heavier gradient on mobile so text stays legible over any focal point */}
+          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/75 to-night/40 sm:from-night sm:via-night/60 sm:to-night/20" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 sm:pb-20 w-full">
           <AnimatedSection direction="up">
@@ -128,8 +129,8 @@ export default function AboutPage() {
               {/* On mobile: positioned inside the image; on md+: decorative bleed outside */}
               <div className="absolute bottom-4 left-4 md:-bottom-6 md:-left-6 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-night-2 border border-white/5 flex items-center justify-center">
                 <div className="text-center">
-                  <span className="font-display text-5xl text-gold font-light">
-                    &apos;21
+                  <span className="font-display text-4xl text-gold font-light">
+                    2018
                   </span>
                   <p className="font-sans text-[10px] tracking-widest2 uppercase text-muted mt-1">
                     Est.
@@ -232,28 +233,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* LARGE TEAM PHOTO
-          Mobile: explicit h-[65vh] overrides the 21/9 aspect-ratio so the section is
-          tall enough to show the team properly. Desktop: h-auto restores the cinematic crop. */}
-      <section
-        className="relative overflow-hidden h-[65vh] md:h-auto border-t border-white/5"
-        style={{ aspectRatio: "21/9" }}
-      >
+      {/* LARGE TEAM PHOTO */}
+      <section className="relative overflow-hidden h-[75vh] md:h-auto md:aspect-[21/9] border-t border-white/5">
         <Image
           src="/images/staff.jpg"
           alt="The Seasons Family"
           fill
-          /* Mobile: 40% down centres the team faces + raised hands.
-             Desktop: 25% keeps the wide cinematic composition. */
-          className="object-cover object-[center_40%] md:object-[center_25%]"
+          className="object-cover object-[center_25%] md:object-[center_20%]"
           sizes="100vw"
         />
-        {/* Top fade — blends from bg-night team section */}
         <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-night to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-night/80 via-night/15 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-night/70 via-night/20 to-transparent" />
         <AnimatedSection
           direction="none"
-          className="absolute inset-0 flex items-end justify-center pb-14 sm:pb-20"
+          className="absolute inset-0 flex items-center justify-center"
         >
           <div className="text-center px-6">
             <div className="w-8 h-px bg-gold/30 mx-auto mb-6" />

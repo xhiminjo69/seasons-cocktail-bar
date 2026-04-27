@@ -144,61 +144,17 @@ export default function FindUsPage() {
         </div>
       </section>
 
-      {/* HOW TO FIND US */}
-      <section className="bg-night py-16 sm:py-32 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection className="mb-16 sm:mb-20">
-            <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-4">
-              Getting Here
-            </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-light text-ivory">
-              How to Find Us
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-6">
-            {[
-              {
-                icon: "◉",
-                title: "On Foot",
-                text: "Walk along the Lungomare promenade heading south from the city centre. We are on the right side, directly facing the sea.",
-              },
-              {
-                icon: "◎",
-                title: "By Car",
-                text: "Follow Rruga Lungomare. Parking is available along the promenade. Look for the warm light and the sound of good music.",
-              },
-              {
-                icon: "◯",
-                title: "Landmarks",
-                text: "We are near the central stretch of the seafront. The Seasons logo is visible from the promenade path.",
-              },
-            ].map((item, i) => (
-              <AnimatedSection key={item.title} delay={i * 0.15}>
-                <span className="font-display text-4xl text-gold/30 block mb-4">{item.icon}</span>
-                <h3 className="font-display text-2xl font-light text-ivory mb-3">{item.title}</h3>
-                <p className="font-sans text-sm text-muted leading-loose">{item.text}</p>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* AMBIENCE STRIP */}
-      <section
-        className="relative overflow-hidden h-[55vh] md:h-auto border-t border-white/5"
-        style={{ aspectRatio: "21/9" }}
-      >
+      <section className="relative overflow-hidden h-[70vh] md:h-auto md:aspect-[21/9] border-t border-white/5">
         <Image
           src="/images/ambienti.jpg"
           alt="Seasons — Come visit us"
           fill
-          className="object-cover object-[center_45%]"
+          className="object-cover object-[center_35%] md:object-[center_45%]"
           sizes="100vw"
         />
-        {/* Top fade from bg-night directions section */}
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-night to-transparent" />
-        <div className="absolute inset-0 bg-night/55" />
+        <div className="absolute inset-0 bg-night/50" />
         <AnimatedSection
           direction="none"
           className="absolute inset-0 flex flex-col items-center justify-center gap-5 text-center px-6"

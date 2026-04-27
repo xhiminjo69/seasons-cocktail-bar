@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 
-type Category = "All" | "Signatures" | "Classics" | "Seasonal";
+type Spirit = "All" | "Gin" | "Vodka" | "Bourbon" | "Whisky" | "Tequila" | "Mezcal" | "Sparkling";
 
 interface Cocktail {
   name: string;
@@ -12,7 +12,6 @@ interface Cocktail {
   ingredients: string[];
   description: string;
   image: string;
-  category: Omit<Category, "All">;
   objectPosition?: string;
 }
 
@@ -24,7 +23,6 @@ const cocktails: Cocktail[] = [
     description:
       "Inspired by the clarity of Adriatic waters. Light, botanical, and with a whisper of the sea.",
     image: "/images/tabaka.jpeg",
-    category: "Signatures",
     objectPosition: "object-center",
   },
   {
@@ -34,7 +32,6 @@ const cocktails: Cocktail[] = [
     description:
       "A sunset poured into a glass. Bittersweet, effervescent, and impossibly warm.",
     image: "/images/cocktailbest.jpeg",
-    category: "Signatures",
     objectPosition: "object-[center_20%]",
   },
   {
@@ -44,7 +41,6 @@ const cocktails: Cocktail[] = [
     description:
       "Dark as a Mediterranean night. Smoky depth, sweet intrigue, and a long finish.",
     image: "/images/cocktails19.jpeg",
-    category: "Signatures",
     objectPosition: "object-center",
   },
   {
@@ -54,7 +50,6 @@ const cocktails: Cocktail[] = [
     description:
       "Delicate, floral, and ethereal. Like the first warm evening of the year.",
     image: "/images/tabaka cool.jpeg",
-    category: "Signatures",
     objectPosition: "object-[center_25%]",
   },
   {
@@ -64,7 +59,6 @@ const cocktails: Cocktail[] = [
     description:
       "Silky and aromatic. Soft as the wind that crosses the Adriatic.",
     image: "/images/cocktail2.jpeg",
-    category: "Signatures",
     objectPosition: "object-center",
   },
   {
@@ -74,7 +68,6 @@ const cocktails: Cocktail[] = [
     description:
       "Warm amber complexity with the sweet heat of late summer evenings.",
     image: "/images/cocktail3.jpeg",
-    category: "Signatures",
     objectPosition: "object-[center_30%]",
   },
   {
@@ -84,7 +77,6 @@ const cocktails: Cocktail[] = [
     description:
       "A white Negroni — herbaceous, bitter-bright, and entirely elegant.",
     image: "/images/cocktail5.jpeg",
-    category: "Classics",
     objectPosition: "object-center",
   },
   {
@@ -94,7 +86,6 @@ const cocktails: Cocktail[] = [
     description:
       "A modern classic with smoky depth and warming ginger fire.",
     image: "/images/cocktail6.jpeg",
-    category: "Classics",
     objectPosition: "object-[center_20%]",
   },
   {
@@ -104,7 +95,6 @@ const cocktails: Cocktail[] = [
     description:
       "Rich, velvety, indulgent. A love letter to late nights and good coffee.",
     image: "/images/cocktail7.jpeg",
-    category: "Classics",
     objectPosition: "object-[center_30%]",
   },
   {
@@ -114,7 +104,6 @@ const cocktails: Cocktail[] = [
     description:
       "Pure and clean. The gold standard of simplicity, perfectly balanced.",
     image: "/images/cocktail8.jpeg",
-    category: "Classics",
     objectPosition: "object-[center_35%]",
   },
   {
@@ -124,7 +113,6 @@ const cocktails: Cocktail[] = [
     description:
       "Clear as the Adriatic on a calm morning. Summer in a single sip.",
     image: "/images/cocktail10.jpeg",
-    category: "Seasonal",
     objectPosition: "object-center",
   },
   {
@@ -134,19 +122,18 @@ const cocktails: Cocktail[] = [
     description:
       "Warm, floral, and lingering — the feeling of autumn's first crisp evening.",
     image: "/images/cocktail11.jpeg",
-    category: "Seasonal",
     objectPosition: "object-[center_25%]",
   },
 ];
 
-const categories: Category[] = ["All", "Signatures", "Classics", "Seasonal"];
+const spirits: Spirit[] = ["All", "Gin", "Vodka", "Bourbon", "Whisky", "Tequila", "Mezcal", "Sparkling"];
 
 export default function MenuPage() {
-  const [active, setActive] = useState<Category>("All");
+  const [active, setActive] = useState<Spirit>("All");
   const [selected, setSelected] = useState<Cocktail | null>(null);
 
   const filtered =
-    active === "All" ? cocktails : cocktails.filter((c) => c.category === active);
+    active === "All" ? cocktails : cocktails.filter((c) => c.spirit.toLowerCase().startsWith(active.toLowerCase()));
 
   const closeModal = useCallback(() => setSelected(null), []);
 
@@ -230,17 +217,17 @@ export default function MenuPage() {
       {/* FILTER — sticky below the 64px navbar (py-4 + 32px logo) */}
       <section className="bg-night sticky top-16 z-30 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center gap-5 sm:gap-8 overflow-x-auto scrollbar-none">
-          {categories.map((cat) => (
+          {spirits.map((s) => (
             <button
-              key={cat}
-              onClick={() => setActive(cat)}
+              key={s}
+              onClick={() => setActive(s)}
               className={`font-sans text-xs tracking-widest2 uppercase whitespace-nowrap transition-all duration-300 pb-1 border-b min-h-[44px] flex items-end ${
-                active === cat
+                active === s
                   ? "text-gold border-gold"
                   : "text-ivory/55 border-transparent hover:text-ivory/80"
               }`}
             >
-              {cat}
+              {s}
             </button>
           ))}
         </div>
@@ -338,9 +325,6 @@ export default function MenuPage() {
                   ))}
                 </ul>
               </div>
-              <span className="font-sans text-[10px] tracking-widest2 uppercase text-ivory/35 mt-6">
-                {selected.category}
-              </span>
             </div>
 
             {/* Close — proper 44px tap target */}

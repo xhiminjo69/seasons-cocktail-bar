@@ -12,7 +12,7 @@ const featuredCocktails = [
     type: "Gin · Elderflower · Sea Salt",
     description:
       "Inspired by the clarity of Adriatic waters. Light, botanical, ethereal.",
-    image: "/images/cocktail10.jpeg",
+    image: "/images/cocktails17.jpeg",
     position: "object-center",
     aspectRatio: "aspect-[3/4]",
   },
@@ -30,7 +30,7 @@ const featuredCocktails = [
     type: "Mezcal · Blackberry · Agave",
     description:
       "Dark as a Mediterranean night. Smoky depth, sweet intrigue.",
-    image: "/images/cocktails19.jpeg",
+    image: "/images/cocktails13.jpeg",
     position: "object-[center_55%]",
     aspectRatio: "aspect-[3/4]",
   },
@@ -213,7 +213,7 @@ export default function HomePage() {
           className="relative min-h-[65vh] md:min-h-full overflow-hidden"
         >
           <Image
-            src="/images/ambienti.jpg"
+            src="/images/extra1.jpg"
             alt="Seasons Bar Ambience"
             fill
             className="object-cover object-[center_45%]"
@@ -310,21 +310,21 @@ export default function HomePage() {
       </section>
 
       {/* TEAM TEASER */}
-      <section className="bg-night overflow-hidden pt-14 sm:pt-20 md:pt-0">
+      <section className="bg-night border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[80vh]">
 
-          {/* Text column */}
+          {/* Text column — first in DOM so it leads on mobile */}
           <AnimatedSection
             direction="right"
-            className="flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-20 py-20 sm:py-28 md:py-0 order-2 md:order-1"
+            className="flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-20 py-20 sm:py-28 md:py-0"
           >
             <p className="font-sans text-xs tracking-widest3 text-gold uppercase mb-6">
               The Team
             </p>
-            <h2 className="font-display text-5xl sm:text-6xl font-light text-ivory leading-tight mb-6">
-              Passion in<br />
-              every pour
-            </h2>
+            <div className="w-8 h-px bg-gold/30 mb-8" />
+            <blockquote className="font-display text-3xl sm:text-4xl font-light italic text-ivory leading-snug mb-8">
+              &ldquo;Passion in<br />every pour.&rdquo;
+            </blockquote>
             <p className="font-sans text-sm text-muted leading-loose mb-10 max-w-sm">
               Our team lives and breathes craft. Each bartender brings their
               own story, technique, and obsession to the bar — united by a
@@ -339,25 +339,19 @@ export default function HomePage() {
             </Link>
           </AnimatedSection>
 
-          {/* Full-bleed team image */}
+          {/* Full-bleed team image — second in DOM, so it follows the quote on mobile */}
           <AnimatedSection
             direction="left"
-            className="relative h-[65vh] md:h-auto md:aspect-auto overflow-hidden order-1 md:order-2"
+            className="relative h-[70vh] md:h-auto overflow-hidden"
           >
             <Image
               src="/images/staff.jpg"
               alt="The Seasons Team"
               fill
-              /* Mobile: 32% centres faces in tall crop; desktop: 22% for wide cinematic frame */
               className="object-cover object-[center_32%] md:object-[center_22%] transition-transform duration-1000 ease-luxury hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            {/* Left-side blend into text column */}
             <div className="absolute inset-0 bg-gradient-to-r from-night/30 via-transparent to-transparent" />
-            {/* Mobile: top fade — image emerges from the dark chapter break above */}
-            <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-night to-transparent md:hidden" />
-            {/* Mobile bottom fade */}
-            <div className="absolute inset-0 bg-gradient-to-t from-night/70 to-transparent md:hidden" />
           </AnimatedSection>
 
         </div>

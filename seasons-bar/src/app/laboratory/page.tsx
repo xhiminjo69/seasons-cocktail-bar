@@ -191,6 +191,25 @@ export default function LaboratoryPage() {
                 className="absolute inset-0 w-full h-full object-cover"
                 poster="/images/CoolDoc.jpeg"
               >
+                <source src="/images/cooking.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-night/20" />
+              <div className="absolute bottom-6 left-6">
+                <span className="font-sans text-[10px] tracking-widest2 uppercase text-gold/80">
+                  Cooking
+                </span>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection direction="left" delay={0.1} className="relative aspect-video overflow-hidden bg-night-3">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                poster="/images/stafff.jpeg"
+              >
                 <source src="/images/labcook.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-night/20" />
@@ -201,9 +220,28 @@ export default function LaboratoryPage() {
               </div>
             </AnimatedSection>
 
+            <AnimatedSection direction="right" delay={0.1} className="relative aspect-video overflow-hidden bg-night-3">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                poster="/images/Doktori.jpeg"
+              >
+                <source src="/images/labing.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-night/20" />
+              <div className="absolute bottom-6 left-6">
+                <span className="font-sans text-[10px] tracking-widest2 uppercase text-gold/80">
+                  Lab Work
+                </span>
+              </div>
+            </AnimatedSection>
+
             <AnimatedSection
               direction="up"
-              delay={0.1}
+              delay={0.2}
               className="relative aspect-video overflow-hidden bg-night-3 md:col-span-2"
             >
               <video

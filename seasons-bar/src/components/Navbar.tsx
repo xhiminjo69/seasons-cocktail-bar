@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,6 +18,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const navigatingRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -26,6 +27,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    navigatingRef.current = true;
     setMenuOpen(false);
   }, [pathname]);
 
@@ -45,7 +47,10 @@ export default function Navbar() {
       document.body.style.left = "";
       document.body.style.right = "";
       document.body.style.overflow = "";
-      if (top) {
+      if (navigatingRef.current) {
+        window.scrollTo(0, 0);
+        navigatingRef.current = false;
+      } else if (top) {
         window.scrollTo(0, -parseInt(top, 10));
       }
     }
