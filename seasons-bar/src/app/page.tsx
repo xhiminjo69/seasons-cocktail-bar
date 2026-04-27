@@ -197,10 +197,10 @@ export default function HomePage() {
           <AnimatedSection className="text-center mt-14 sm:mt-24" delay={0.3}>
             <Link
               href="/menu"
-              className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase text-ivory/70 hover:text-gold transition-colors duration-300 group"
+              className="inline-flex items-center gap-4 font-sans text-xs tracking-widest2 uppercase border border-gold text-gold px-8 py-4 hover:bg-gold hover:text-night transition-all duration-300"
             >
               <span>Explore the Full Menu</span>
-              <span className="w-8 h-px bg-current transition-all duration-300 group-hover:w-12" />
+              <span>→</span>
             </Link>
           </AnimatedSection>
         </div>
@@ -238,10 +238,10 @@ export default function HomePage() {
           </p>
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase text-ivory/70 hover:text-gold transition-colors duration-300 group w-fit"
+            className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase border border-ivory/30 text-ivory px-6 py-3 hover:border-gold hover:text-gold transition-all duration-300 w-fit"
           >
             <span>View Gallery</span>
-            <span className="w-8 h-px bg-current transition-all duration-300 group-hover:w-12" />
+            <span>→</span>
           </Link>
         </AnimatedSection>
       </section>
@@ -301,10 +301,10 @@ export default function HomePage() {
 
           <Link
             href="/laboratory"
-            className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase text-gold hover:text-gold-hover transition-colors duration-300 group"
+            className="inline-flex items-center gap-4 font-sans text-xs tracking-widest2 uppercase border border-gold text-gold px-8 py-4 hover:bg-gold hover:text-night transition-all duration-300"
           >
             <span>Enter the Lab</span>
-            <span className="w-8 h-px bg-current transition-all duration-300 group-hover:w-12" />
+            <span>→</span>
           </Link>
         </AnimatedSection>
       </section>
@@ -332,10 +332,10 @@ export default function HomePage() {
             </p>
             <Link
               href="/about"
-              className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase text-ivory/70 hover:text-gold transition-colors duration-300 group w-fit"
+              className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase border border-ivory/30 text-ivory px-6 py-3 hover:border-gold hover:text-gold transition-all duration-300 w-fit"
             >
               <span>Meet the Team</span>
-              <span className="w-8 h-px bg-current transition-all duration-300 group-hover:w-12" />
+              <span>→</span>
             </Link>
           </AnimatedSection>
 
@@ -372,10 +372,10 @@ export default function HomePage() {
             </p>
             <Link
               href="/find-us"
-              className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase text-ivory/70 hover:text-gold transition-colors duration-300 group"
+              className="inline-flex items-center gap-3 font-sans text-xs tracking-widest2 uppercase border border-ivory/30 text-ivory px-6 py-3 hover:border-gold hover:text-gold transition-all duration-300"
             >
               <span>Get Directions</span>
-              <span className="w-8 h-px bg-current transition-all duration-300 group-hover:w-12" />
+              <span>→</span>
             </Link>
           </AnimatedSection>
         </div>
